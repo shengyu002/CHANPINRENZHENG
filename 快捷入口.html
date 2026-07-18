@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>快捷入口 - 合规资料库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif; background: #f4f7f9; color: #333333; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+        .container { width: 100%; max-width: 1000px; background: #ffffff; border-radius: 24px; padding: 50px 40px; box-shadow: 0 20px 50px rgba(26, 75, 130, 0.08); }
+        .header { text-align: center; margin-bottom: 45px; position: relative; }
+        .header h1 { font-size: 28px; color: #1A4B82; letter-spacing: 2px; margin-bottom: 10px; }
+        .header p { font-size: 15px; color: #7A8C9E; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+        .header .line { width: 60px; height: 4px; background: #1A4B82; margin: 16px auto 0; border-radius: 4px; }
+        
+        /* 返回按钮 */
+        .back-btn-wrapper { text-align: left; margin-bottom: 16px; }
+        .back-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #F2F6FA;
+            color: #1A4B82;
+            border: 1px solid #c9d9e8;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .back-btn:hover {
+            background-color: #1A4B82;
+            color: #ffffff;
+            border-color: #1A4B82;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(26, 75, 130, 0.2);
+        }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .card {
+            background: #ffffff;
+            border: 1px solid #eef2f5;
+            border-radius: 16px;
+            padding: 30px 24px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: #1A4B82;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(26, 75, 130, 0.12);
+            border-color: transparent;
+        }
+        .card:hover::before {
+            opacity: 1;
+        }
+        .card-icon { font-size: 42px; margin-bottom: 16px; display: block; }
+        .card-title { font-size: 18px; font-weight: 600; color: #1A4B82; margin-bottom: 8px; }
+        .card-desc { font-size: 13px; color: #7A8C9E; line-height: 1.5; flex-grow: 1; margin-bottom: 16px; }
+        .card-btn { font-size: 14px; font-weight: 500; color: #ffffff; background: #1A4B82; padding: 8px 24px; border-radius: 20px; transition: background 0.2s; }
+        .card:hover .card-btn { background: #005BAC; }
+        @media (max-width: 600px) { .container { padding: 30px 20px; } .header h1 { font-size: 22px; } .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-btn-wrapper">
+                <a href="index.html" class="back-btn">◀ 返回资料库首页</a>
+            </div>
+            <h1>业务常用快捷入口</h1>
+            <p>点击下方卡片，直达韩国官方业务查询与认证平台。</p>
+            <div class="line"></div>
+        </div>
+
+        <div class="grid">
+            <!-- 卡片 1：韩国知识产权局 -->
+            <a href="https://www.kipris.or.kr/khome/main.do" target="_blank" class="card">
+                <span class="card-icon">🏛️</span>
+                <div class="card-title">韩国知识产权局 (KIPRIS)</div>
+                <div class="card-desc">快速检索韩国商标、专利及版权法律状态，查询公告及审查进度。</div>
+                <span class="card-btn">前往官网 →</span>
+            </a>
+
+            <!-- 卡片 2：生活化学综合搜索 -->
+            <a href="https://ecolife.mcee.go.kr/ecolife/main" target="_blank" class="card">
+                <span class="card-icon">🧪</span>
+                <div class="card-title">生活化学综合搜索</div>
+                <div class="card-desc">韩国生活化学品安全确认、申报及合规信息一站式查询平台。</div>
+                <span class="card-btn">前往官网 →</span>
+            </a>
+
+            <!-- 卡片 3：KC认证信息查询 -->
+            <a href="https://www.safetykorea.kr/release/itemSearch" target="_blank" class="card">
+                <span class="card-icon">⚡</span>
+                <div class="card-title">KC认证信息查询</div>
+                <div class="card-desc">韩国电气用品及生活用品安全认证（KC）产品及合格信息在线检索。</div>
+                <span class="card-btn">前往官网 →</span>
+            </a>
+
+            <!-- 卡片 4：电磁波现状查询 -->
+            <a href="https://www.rra.go.kr/ko/license/A_c_search.do#" target="_blank" class="card">
+                <span class="card-icon">📡</span>
+                <div class="card-title">电磁波现状查询</div>
+                <div class="card-desc">韩国广播通信设备电磁波合格评定及认证现状查询平台。</div>
+                <span class="card-btn">前往官网 →</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

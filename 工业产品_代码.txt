@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>工业产品 - 合规资料库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif; background: #f4f7f9; color: #333333; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+        .container { width: 100%; max-width: 1000px; background: #ffffff; border-radius: 24px; padding: 50px 40px; box-shadow: 0 20px 50px rgba(26, 75, 130, 0.08); }
+        .header { text-align: center; margin-bottom: 45px; position: relative; }
+        .header h1 { font-size: 28px; color: #1A4B82; letter-spacing: 2px; margin-bottom: 10px; }
+        .header p { font-size: 15px; color: #7A8C9E; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+        .header .line { width: 60px; height: 4px; background: #1A4B82; margin: 16px auto 0; border-radius: 4px; }
+        
+        /* 显眼的返回按钮 */
+        .back-btn-wrapper { text-align: left; margin-bottom: 16px; }
+        .back-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #F2F6FA;
+            color: #1A4B82;
+            border: 1px solid #c9d9e8;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .back-btn:hover {
+            background-color: #1A4B82;
+            color: #ffffff;
+            border-color: #1A4B82;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(26, 75, 130, 0.2);
+        }
+
+        .sub-category { margin-top: 32px; margin-bottom: 16px; }
+        .sub-category:first-of-type { margin-top: 0; }
+        .sub-category h2 { font-size: 20px; color: #1A4B82; font-weight: 600; border-left: 5px solid #1A4B82; padding-left: 12px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .card { background: #ffffff; border: 1px solid #eef2f5; border-radius: 16px; padding: 30px 24px; text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.25s ease; position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: #1A4B82; opacity: 0; transition: opacity 0.25s ease; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(26, 75, 130, 0.12); border-color: transparent; }
+        .card:hover::before { opacity: 1; }
+        .card-icon { font-size: 42px; margin-bottom: 16px; display: block; }
+        .card-title { font-size: 18px; font-weight: 600; color: #1A4B82; margin-bottom: 8px; }
+        .card-desc { font-size: 13px; color: #7A8C9E; line-height: 1.5; flex-grow: 1; margin-bottom: 16px; }
+        .card-btn { font-size: 14px; font-weight: 500; color: #ffffff; background: #1A4B82; padding: 8px 24px; border-radius: 20px; transition: background 0.2s; }
+        .card:hover .card-btn { background: #005BAC; }
+        @media (max-width: 600px) { .container { padding: 30px 20px; } .header h1 { font-size: 22px; } .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-btn-wrapper">
+                <a href="index.html" class="back-btn">◀ 返回资料库首页</a>
+            </div>
+            <h1>工业产品安全认证合规资料</h1>
+            <p>本类目包含《工业安全保健法》安全认证对象及所需提交资料的中文翻译与韩文原版对照文件。</p>
+            <div class="line"></div>
+        </div>
+
+        <div class="sub-category">
+            <h2>📄 中文</h2>
+        </div>
+        <div class="grid">
+            <a href="工业安全保健法_安全认证各审查种类的提交资料.pdf" class="card">
+                <span class="card-icon">📋</span>
+                <div class="card-title">安全认证各审查种类的提交资料</div>
+                <div class="card-desc">工业安全保健法施行细则附表13：审查类型对应的预备审查、书面审查、技术能力及生产体系审查、产品审查资料清单。</div>
+                <span class="card-btn">查看 PDF →</span>
+            </a>
+            <a href="工业安全保健法_安全认证对象.pdf" class="card">
+                <span class="card-icon">🛡️</span>
+                <div class="card-title">安全认证对象</div>
+                <div class="card-desc">工业安全保健法施行令第74条：安全认证对象机械（如压力机、起重机等）、防护装置（如安全阀等）及个人防护用品（如安全帽、安全鞋等）。</div>
+                <span class="card-btn">查看 PDF →</span>
+            </a>
+        </div>
+
+        <div class="sub-category">
+            <h2>🇰🇷 韩文</h2>
+        </div>
+        <div class="grid">
+            <a href="산업안전보건법 안전인증을 위한 심사종류별 제출서류.pdf" class="card">
+                <span class="card-icon">📋</span>
+                <div class="card-title">안전인증을 위한 심사종류별 제출서류</div>
+                <div class="card-desc">산업안전보건법 시행규칙 [별표 13] : 예비심사, 서면심사, 기술능력 및 생산체계 심사, 제품심사별 제출서류 목록.</div>
+                <span class="card-btn">查看 PDF →</span>
+            </a>
+            <a href="산업안전보건법_안전인증대상.pdf" class="card">
+                <span class="card-icon">🛡️</span>
+                <div class="card-title">안전인증대상</div>
+                <div class="card-desc">산업안전보건법 시행령 제74조 : 안전인증대상 기계·설비, 방호장치, 보호구 (프레스, 크레인, 안전모, 안전화 등).</div>
+                <span class="card-btn">查看 PDF →</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

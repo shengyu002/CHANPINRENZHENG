@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+        font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+        font-size: 11pt;
+        color: #333333;
+        line-height: 1.6;
+        margin: 60px 80px;
+        background-color: #ffffff;
+    }
+    h1.document-title {
+        font-family: 'SimHei', '黑体', sans-serif;
+        font-size: 20pt;
+        color: #1A4B82;
+        text-align: center;
+        margin-bottom: 20pt;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    h2 {
+        font-family: 'SimHei', '黑体', sans-serif;
+        font-size: 16pt;
+        color: #1A4B82;
+        margin-top: 14pt;
+        margin-bottom: 6pt;
+        font-weight: bold;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 4pt;
+    }
+    h3 {
+        font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+        font-size: 13pt;
+        color: #333333;
+        margin-top: 10pt;
+        margin-bottom: 4pt;
+        font-weight: bold;
+    }
+    p {
+        text-indent: 2em;
+        margin-top: 4pt;
+        margin-bottom: 4pt;
+        text-align: justify;
+    }
+    /* 语义颜色类 */
+    .mandatory { color: #005BAC; font-weight: bold; }   /* 强制/提交/关键动作 */
+    .deadline { color: #D35400; font-weight: bold; }    /* 时间期限 */
+    .prohibited { color: #C00000; font-weight: bold; }  /* 禁止/红线 */
+    .exemption { color: #27AE60; font-weight: bold; }   /* 豁免/例外 */
+    
+    ul, ol {
+        margin-top: 4pt;
+        margin-bottom: 8pt;
+        padding-left: 2em;
+    }
+    li {
+        margin-bottom: 5pt;
+        text-indent: 0em;
+    }
+    .sub-list {
+        list-style-type: lower-alpha;
+        margin-top: 2pt;
+        margin-bottom: 2pt;
+        padding-left: 2em;
+    }
+    .note-box {
+        background-color: #F8FAFC;
+        border-left: 4px solid #1A4B82;
+        padding: 8pt 12pt;
+        margin-top: 6pt;
+        margin-bottom: 6pt;
+        font-size: 10.5pt;
+        color: #555555;
+    }
+    .warning-box {
+        background-color: #FFF8F0;
+        border-left: 4px solid #C00000;
+        padding: 8pt 12pt;
+        margin-top: 6pt;
+        margin-bottom: 6pt;
+        font-size: 10.5pt;
+        color: #555555;
+    }
+</style>
+</head>
+<body>
+
+<h1 class="document-title">工作内容交接-图片版权</h1>
+
+<h2>所需材料：</h2>
+<ol>
+    <li>韩国营业执照</li>
+    <li>公司公章（电子）</li>
+    <li>法人章（电子）</li>
+    <li>法人电子签</li>
+    <li>邮箱地址（必须是在使用中的邮箱）</li>
+    <li>韩国手机号</li>
+    <li>认证证书及密码</li>
+    <li>图片：详情页（需按页分开，最多 10 张）</li>
+    <li>图片所登录的平台链接以及上传日期</li>
+    <li>法人出生年月日</li>
+</ol>
+
+<h2>步骤：</h2>
+
+<h3>1. 填写“업데이트요청서”</h3>
+<ol>
+    <li><span class="mandatory">发送邮件至</span> find@kodata.co.kr<br>
+        邮件标题 <span class="mandatory">“업데이트요청서 - 푸웨이훠 유한회사”</span><br>
+        邮件内容 <span class="mandatory">“안녕하세요 업데이트 요청을 신청합니다, 첨부자료와 함께 검토 부탁드립니다, 감사합니다”</span></li>
+    <li>附件 <span class="mandatory">“업데이트요청서”+“营业执照”</span></li>
+</ol>
+
+<h3>2. 注册账号</h3>
+<ol>
+    <li><span class="mandatory">打开</span> “한국저작권위원회-저작권 등록”</li>
+    <li>把 <span class="mandatory">“实名认证”+“网页链接”</span> 发送至老板</li>
+    <li><span class="mandatory">点击</span> “회원가입”</li>
+    <li><span class="mandatory">点击</span> “법인사업자”</li>
+    <li><span class="mandatory">点击</span> “모든 약관 동의하기”→ <span class="mandatory">“동의합니다”</span></li>
+    <li>对照营业执照在空白处输入<br>“상호명”<br>“법인번호”<br>“사업자등록번호”</li>
+    <li>输入 “이메일”→ <span class="mandatory">点击</span> “중복확인”</li>
+    <li>输入 <span class="mandatory">“비밀번호”</span>（建议使用电子邮箱的密码）</li>
+    <li><span class="mandatory">点击</span> “우편검색”→ 输入营业执照上的地址→ 在空格处填入详细信息（即营业执照中“,”后面的部分）</li>
+    <li><span class="mandatory">点击</span> “담당자 본인인증” 根据老板提供的信息进行实名认证</li>
+    <li>输入 “이메일”→ <span class="mandatory">点击</span> “이메일 인증”</li>
+    <li>按顺序 <span class="mandatory">点击</span> “동의”→ <span class="mandatory">“동의”</span>→ “동의안함”</li>
+    <li><span class="mandatory">点击</span> “가입하기”</li>
+    <li><span class="mandatory">点击</span> “회원 들어가기”</li>
+</ol>
+
+<h3>3. 登录并补充材料</h3>
+<ol>
+    <li>输入 “이메일/비밀번호”→ <span class="mandatory">点击</span> “로그인”</li>
+    <li>进入页面会出现补充材料的提示→ <span class="mandatory">点击</span> “확인”</li>
+    <li>输入 “법인번호”→ <span class="mandatory">点击</span> “확인”</li>
+    <li><span class="mandatory">点击</span> “인증서 보기”</li>
+    <li><span class="mandatory">选择</span> 认证书 → <span class="mandatory">输入</span> 密码 → <span class="mandatory">完成</span></li>
+</ol>
+
+<h3>4. 准备确认书</h3>
+<ol>
+    <li>根据模板填写“업무상 저작물 확인서”，并 <span class="mandatory">转为图片型 PDF 保存</span></li>
+</ol>
+
+<h3>5. 填写版权登记申请</h3>
+<ol>
+    <li><span class="mandatory">点击</span> “일반저작물 등록”</li>
+    <li><span class="mandatory">点击</span> “온라인 등록신청”</li>
+    <li><span class="mandatory">选择</span> “신규등록”→ <span class="mandatory">点击</span> “다음”</li>
+    <li>输入 “전화번호”→ <span class="mandatory">点击</span> “다음”→ <span class="mandatory">点击</span> “확인”</li>
+    <li>根据提前写好的“업무상 저작물 확인서”填写<br>제호(제목)+종류</li>
+    <li>内容：쿠팡 상품 상세 페이지/대표이미지에 사용하기 위해 제작된 제품 이미지</li>
+    <li>계속적간행물 등 여부：아니요</li>
+    <li>공표여부：예</li>
+    <li>창작연월일：（询问）</li>
+    <li>맨처음 공표 연월일：选择“창작연월일”之后的 2-3 天</li>
+    <li>공표 국가：한국</li>
+    <li>공표 방법：인터넷</li>
+    <li>공표 매체정보：输入平台售卖链接</li>
+    <li>저작자표시：아니요</li>
+    <li><span class="mandatory">点击</span> “추가” → 输入：<br>
+        성명：营业执照法人姓名<br>
+        생년월일：举例（921210）<br>
+        → <span class="mandatory">点击</span> “추가”</li>
+</ol>
+
+<h3>6. 上传文件</h3>
+<ol>
+    <li><span class="mandatory">选择</span> “인터넷 전송(복제물 첨부)”</li>
+    <li>“복제물 업로드” <span class="mandatory">点击</span> “업로드”<br>
+        <span class="mandatory">点击</span> “파일 추가” → 选择需要上传的图片→ <span class="mandatory">点击</span> “确认”<br>
+        <span class="mandatory">点击</span> “파일 이름”旁边的白色正方形<br>
+        <span class="mandatory">点击</span> “전송하기”</li>
+    <li>“첨부서류 제출” <span class="mandatory">点击</span> “업로드”<br>
+        <span class="mandatory">点击</span> “파일 추가”→ 选择“업무상 저작물 확인서”<br>
+        <span class="mandatory">点击</span> “파일 이름”旁边的白色正方形<br>
+        <span class="mandatory">点击</span> “전송하기”</li>
+    <li>“추가 제출서류” <span class="mandatory">点击</span> “파일 추가” → <span class="mandatory">点击</span> “업로드”<br>
+        <span class="mandatory">点击</span> “파일 추가” → 选择营业执照<br>
+        <span class="mandatory">点击</span> “파일 이름”旁边的白色正方形<br>
+        <span class="mandatory">点击</span> “전송하기”</li>
+    <li><span class="mandatory">点击</span> “저장”</li>
+    <li><span class="mandatory">点击</span> “서류 확인”</li>
+    <li>使用 <span class="mandatory">“공동인증서”</span> 进行认证</li>
+</ol>
+
+<h3>7. 付款及提交审批</h3>
+<ol>
+    <li><span class="mandatory">选择</span> “무통장 결제”→ <span class="mandatory">“하나 은행”</span>→ <span class="mandatory">截屏并保存</span></li>
+    <li>打开钉钉→ OA 审批：<br>
+        <span class="mandatory">选择</span> 日期<br>
+        多选框选择- <span class="mandatory">“其他”</span><br>
+        <span class="mandatory">输入</span> 金额<br>
+        付款说明（举例：图片版权的手续费 -FUWEIHUO-COUPANG16/8533855928）<br>
+        费用团队归属 <span class="mandatory">选择</span> “产品认证”</li>
+    <li><span class="mandatory">复制</span> 截图中的收款账户信息，<span class="mandatory">粘贴</span> 到对应框内</li>
+    <li>附件上传：收据截图 + 要申请版权的图片 1 张</li>
+    <li>等待审批结果（<span class="deadline">预计 1 周-1 个月</span>）</li>
+</ol>
+
+</body>
+</html>

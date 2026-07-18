@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>成人用品及医疗器械 - 合规资料库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif; background: #f4f7f9; color: #333333; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+        .container { width: 100%; max-width: 1000px; background: #ffffff; border-radius: 24px; padding: 50px 40px; box-shadow: 0 20px 50px rgba(26, 75, 130, 0.08); }
+        .header { text-align: center; margin-bottom: 45px; position: relative; }
+        .header h1 { font-size: 28px; color: #1A4B82; letter-spacing: 2px; margin-bottom: 10px; }
+        .header p { font-size: 15px; color: #7A8C9E; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+        .header .line { width: 60px; height: 4px; background: #1A4B82; margin: 16px auto 0; border-radius: 4px; }
+        
+        /* 显眼的返回按钮 */
+        .back-btn-wrapper { text-align: left; margin-bottom: 16px; }
+        .back-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #F2F6FA;
+            color: #1A4B82;
+            border: 1px solid #c9d9e8;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .back-btn:hover {
+            background-color: #1A4B82;
+            color: #ffffff;
+            border-color: #1A4B82;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(26, 75, 130, 0.2);
+        }
+
+        .sub-category { margin-top: 32px; margin-bottom: 16px; }
+        .sub-category:first-of-type { margin-top: 0; }
+        .sub-category h2 { font-size: 20px; color: #1A4B82; font-weight: 600; border-left: 5px solid #1A4B82; padding-left: 12px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .card { background: #ffffff; border: 1px solid #eef2f5; border-radius: 16px; padding: 30px 24px; text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.25s ease; position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: #1A4B82; opacity: 0; transition: opacity 0.25s ease; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(26, 75, 130, 0.12); border-color: transparent; }
+        .card:hover::before { opacity: 1; }
+        .card-icon { font-size: 42px; margin-bottom: 16px; display: block; }
+        .card-title { font-size: 18px; font-weight: 600; color: #1A4B82; margin-bottom: 8px; }
+        .card-desc { font-size: 13px; color: #7A8C9E; line-height: 1.5; flex-grow: 1; margin-bottom: 16px; }
+        .card-btn { font-size: 14px; font-weight: 500; color: #ffffff; background: #1A4B82; padding: 8px 24px; border-radius: 20px; transition: background 0.2s; }
+        .card:hover .card-btn { background: #005BAC; }
+        @media (max-width: 600px) { .container { padding: 30px 20px; } .header h1 { font-size: 22px; } .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-btn-wrapper">
+                <a href="index.html" class="back-btn">◀ 返回资料库首页</a>
+            </div>
+            <h1>成人用品及医疗器械合规资料</h1>
+            <p>本类目包含合规指引中文版，以及韩国医疗器械销售商指南、品目分类、施行规则等韩文法规原文。</p>
+            <div class="line"></div>
+        </div>
+
+        <!-- 子类目 1：介绍 -->
+        <div class="sub-category">
+            <h2>📖 介绍</h2>
+        </div>
+        <div class="grid">
+            <a href="成人用品及医疗器械合规指引.html" class="card">
+                <span class="card-icon">📖</span>
+                <div class="card-title">成人用品及医疗器械合规指引</div>
+                <div class="card-desc">医疗器械与成人用品界定、销售业申报流程、线上线下合规与广告规范。（中文版）</div>
+                <span class="card-btn">查看资料 →</span>
+            </a>
+        </div>
+
+        <!-- 子类目 2：法令 -->
+        <div class="sub-category">
+            <h2>⚖️ 法令</h2>
+        </div>
+        <div class="grid">
+            <a href="의료기기 판매업자 준수사항 등 의료기기법 안내.pdf" class="card">
+                <span class="card-icon">⚖️</span>
+                <div class="card-title">의료기기 판매업자 준수사항 등 의료기기법 안내</div>
+                <div class="card-desc">医疗器械销售商合规事项及医疗器械法指南（韩文原文）</div>
+                <span class="card-btn">查看原文 →</span>
+            </a>
+            <a href="의료기기 품목 및 품목별 등급에 관한 규정.pdf" class="card">
+                <span class="card-icon">📋</span>
+                <div class="card-title">의료기기 품목 및 품목별 등급에 관한 규정</div>
+                <div class="card-desc">医疗器械品种及品种别等级相关规定（韩文原文）</div>
+                <span class="card-btn">查看原文 →</span>
+            </a>
+            <a href="의료기기법 시행규칙.pdf" class="card">
+                <span class="card-icon">📜</span>
+                <div class="card-title">의료기기법 시행규칙</div>
+                <div class="card-desc">医疗器械法施行规则（韩文原文）</div>
+                <span class="card-btn">查看原文 →</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

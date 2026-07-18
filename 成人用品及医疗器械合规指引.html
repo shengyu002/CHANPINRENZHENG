@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+        font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+        font-size: 11pt;
+        color: #333333;
+        line-height: 1.6;
+        margin: 60px 80px;
+        background-color: #ffffff;
+    }
+    h1.document-title {
+        font-family: 'SimHei', '黑体', sans-serif;
+        font-size: 20pt;
+        color: #1A4B82;
+        text-align: center;
+        margin-bottom: 20pt;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    h2 {
+        font-family: 'SimHei', '黑体', sans-serif;
+        font-size: 16pt;
+        color: #1A4B82;
+        margin-top: 14pt;
+        margin-bottom: 6pt;
+        font-weight: bold;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 4pt;
+    }
+    h3 {
+        font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+        font-size: 13pt;
+        color: #333333;
+        margin-top: 10pt;
+        margin-bottom: 4pt;
+        font-weight: bold;
+    }
+    p {
+        text-indent: 2em;
+        margin-top: 4pt;
+        margin-bottom: 4pt;
+        text-align: justify;
+    }
+    /* 语义颜色类 */
+    .mandatory { color: #005BAC; font-weight: bold; }   /* 强制/提交 */
+    .deadline { color: #D35400; font-weight: bold; }    /* 时间期限 */
+    .prohibited { color: #C00000; font-weight: bold; }  /* 禁止/红线 */
+    .exemption { color: #27AE60; font-weight: bold; }   /* 豁免/例外 */
+    
+    ul, ol {
+        margin-top: 4pt;
+        margin-bottom: 8pt;
+        padding-left: 2em;
+    }
+    li {
+        margin-bottom: 3pt;
+        text-indent: 0em;
+    }
+    .sub-list {
+        list-style-type: lower-alpha;
+        margin-top: 2pt;
+        margin-bottom: 2pt;
+        padding-left: 2em;
+    }
+    .note-box {
+        background-color: #F8FAFC;
+        border-left: 4px solid #1A4B82;
+        padding: 8pt 12pt;
+        margin-top: 6pt;
+        margin-bottom: 6pt;
+        font-size: 10.5pt;
+        color: #555555;
+    }
+    .warning-box {
+        background-color: #FFF8F0;
+        border-left: 4px solid #C00000;
+        padding: 8pt 12pt;
+        margin-top: 6pt;
+        margin-bottom: 6pt;
+        font-size: 10.5pt;
+        color: #555555;
+    }
+</style>
+</head>
+<body>
+
+<h1 class="document-title">成人用品销售流程指南</h1>
+
+<h2>一、基础流程与所需文件</h2>
+<p>渠道：<span class="mandatory">[통신판매업신고] 通信销售业申报 | 民愿指南及申请 | 政府24</span></p>
+
+<p><strong>○ 必须申报的内容：</strong></p>
+<ol>
+    <li>通信销售业新申报书</li>
+    <li>购买安全服务使用确认书（可在COUPANG领取）</li>
+</ol>
+<p><strong>□ 申报方法与处理周期：</strong></p>
+<ul>
+    <li>在线办理 / 窗口办理 / <span class="deadline">3日</span>（处理时间）</li>
+</ul>
+
+<div class="warning-box">
+    <strong>【关键提醒】</strong> 若销售的是<span class="mandatory">“医疗器械”</span>，则<span class="mandatory">必须进行医疗器械销售业申报</span>！
+</div>
+
+<h2>二、医疗器械与成人用品的分类界定</h2>
+
+<h3>（一）属于医疗器械的成人用品</h3>
+<p><strong>B08000 避孕套（Condom）：</strong></p>
+<ul>
+    <li>B08010.01 男用避孕套 [3]：以预防性病及避孕为目的，男性使用。</li>
+    <li>B08020.01 女用避孕套 [3]：以预防性病及避孕为目的，女性使用。</li>
+</ul>
+<p><strong>B09000 避孕器械（Contraceptive device）：</strong></p>
+<ul>
+    <li>B09010.01 避孕子宫托 [3]：以避孕为目的使用的器具。</li>
+    <li>B09010.02 植入式避孕器 [4]：植入含有激素等成分的器具，使精子的活动能力减弱，达到避孕目的。</li>
+    <li>B09010.03 子宫托 [3]：以治疗子宫脱垂（脱出）为目的使用的器具。</li>
+    <li>B09020.01 避孕隔膜 [3]：以避孕为目的，覆盖在子宫颈上的隔膜。</li>
+    <li>B09030.01 宫内避孕器 [4]：植入子宫内以达到避孕目的器具（含药物释放型宫内节育器）。</li>
+    <li>B09040.01 避孕输卵管夹/带/插管 [4]：以避孕为目的，从外部压迫输卵管用的夹子、环等机械性器具。</li>
+</ul>
+<p><strong>A65000 医疗用冲洗器：</strong></p>
+<ul>
+    <li>A65050.01 子宫内膜冲洗/抽吸单元 [2]：用于冲洗或抽吸子宫内膜的装置，用于子宫内膜细胞检查。</li>
+    <li>A65060.01 阴道冲洗器 [2]：以冲洗阴道为目的的装置，<span class="exemption">不包括用于冲水或其他形态的清洗器（如妇洗器）</span>。</li>
+    <li>A65070.01 尿道冲洗器 [2]：以清洗尿道为目的的器具，<span class="exemption">不包括尿道清洗器</span>。</li>
+</ul>
+<div class="note-box">
+    <strong>🔗 查询提示：</strong><br>
+    若产品超出上述范围，请参照“医疗器械品种及品种别等级相关规定”的附件《医疗器械名录》进行确认和核查。
+</div>
+
+<h3>（二）易被视为医疗器械的“边缘”品类</h3>
+<p><strong>1. 以医疗目的宣传的性器官刺激器（低频·电刺激）：</strong></p>
+<ul>
+    <li>宣称“改善勃起功能障碍”、“治疗性功能障碍”、“改善血流”</li>
+    <li>宣称“康复、治疗、矫正”</li>
+</ul>
+<p><span class="mandatory">→ 此类情况被归类为低频刺激器/电刺激治疗器类，被认定为医疗器械的可能性极高。</span></p>
+
+<p><strong>2. 阴茎环（有条件的区分）：</strong></p>
+<ul>
+    <li><span class="exemption">□ 普通成人用品</span>：装饰用、玩耍用、快感增强用。</li>
+    <li><span class="mandatory">○ 可能属于医疗器械</span>：宣称“维持勃起”、“改善勃起障碍”、“治疗早泄”。</li>
+</ul>
+
+<p><strong>3. 阴道润滑剂（有条件的区分）：</strong></p>
+<ul>
+    <li><span class="exemption">□ 普通化妆品/工业品</span>：减少摩擦、游戏用。</li>
+    <li><span class="mandatory">○ 可能属于医疗器械</span>：宣称“治疗阴道干燥”、“预防阴道炎”、“医学效果”。</li>
+</ul>
+
+<div class="warning-box">
+    <strong>🚫 容易被误认为医疗器械的禁用词：</strong><br>
+    “治疗、预防、改善、功能障碍、医学的、疾病……” 等。
+</div>
+
+<h3>（三）不属于医疗器械的成人用品（特别提示：法规可能变更，需定期核查）</h3>
+<ul>
+    <li>1. 振动器（跳蛋/按摩棒）</li>
+    <li>2. 假阳具</li>
+    <li>3. 肛门玩具</li>
+    <li>4. 手动型性器具</li>
+    <li>5. SM 用品</li>
+    <li>6. 一般按摩用性器具</li>
+    <li>7. 无“治疗·预防”字样的普通成人用品。</li>
+</ul>
+
+<h2>三、医疗器械销售业申报流程</h2>
+<h3>（一）基本处理流程</h3>
+<p>申报人填写 → 受理 → 审查 → 审批 → 制作申报证 → 申报证颁发</p>
+<p>处理周期：<span class="deadline">3天</span></p>
+
+<h3>（二）所需文件</h3>
+<ol>
+    <li>医疗器械销售（租赁）业申报书</li>
+    <li>代表人的身份证</li>
+    <li>行政信息共同利用同意书</li>
+    <li>营业执照（如为法人，则需额外提供法人登记簿副本）</li>
+    <li>法人印鉴证明书</li>
+    <li>印鉴章</li>
+    <li>营业场所平面图</li>
+    <li>租赁合同</li>
+    <li>建筑登记簿</li>
+    <li>可证明办公室所在地的文件</li>
+    <li>通信销售业申报证复印件</li>
+</ol>
+
+<h3>（三）经营场所硬件要求</h3>
+<p><strong>建筑用途确认：</strong> 应为“邻里生活设施、销售设施、零售店、业务设施”之一。</p>
+<ul>
+    <li>建筑用途必须符合邻里生活设施或销售设施，且需为<span class="mandatory">独立空间</span>。</li>
+    <li><span class="exemption">※ 例外：若仅进行线上销售且不存放实体货物，在“业务设施”类的办公室中进行申报也是允许的。</span></li>
+</ul>
+<p><strong class="prohibited">存放要求：</strong></p>
+<ul>
+    <li>存放医疗器械的仓库需确保充足的空间和面积。若与非医疗器械共同存放，必须进行物理隔断或分区存放。</li>
+    <li>医疗器械不得直接接触地面。</li>
+    <li>必须位于采光、照明、通风良好的场所。</li>
+    <li>为预防产品变质，需配备可保持适当温湿度的设施。对于需要恒定温度的产品，必须配备带自动温度记录装置的冷冻/冷藏设备。</li>
+</ul>
+
+<h3>（四）费用及后续事项</h3>
+<p><strong>手续费：</strong> <span class="deadline">9,000韩元</span>（必须本人前往办事机构窗口领取，申报证不支持在线打印）</p>
+<div class="note-box">
+    <strong>💡 重要提示：</strong> 申报提交后，保健所会进行电话确认，可能会询问“经营场所地址？具体销售什么产品？”等相关问题，并告知登记牌照税及缴纳方式。
+</div>
+<p><strong>登记牌照税：</strong> <span class="deadline">27,000韩元</span>（需于<span class="deadline">每年1月1日</span>前缴纳完毕）。<br><span class="mandatory">缴纳税费后需亲自前往保健所领取申报证。</span></p>
+
+<h2>四、医疗器械合规销售与广告规范</h2>
+<h3>（一）核心：必须销售“已获许可/认证/申报的产品”</h3>
+<ul>
+    <li><span class="mandatory">核查方法：</span> 确认产品包装上的“医疗器械许可编号、品目名称、制造商/进口商”。</li>
+    <li><span class="prohibited">销售无许可的医疗器械 = 违法行为（特别是海外直购、平行进口产品需格外注意）</span>。</li>
+</ul>
+
+<h3>（二）标签及说明要求（线上销售尤其重要）</h3>
+<p><strong>✅ 必须标注的信息：</strong></p>
+<ol>
+    <li>品目名称</li>
+    <li>医疗器械许可（或认证）编号</li>
+    <li>制造商或进口商名称</li>
+    <li>使用目的</li>
+    <li>使用注意事项</li>
+</ol>
+
+<p><strong>❌ 禁止使用的广告词：</strong></p>
+<ul>
+    <li>超出许可范围的功效·效果</li>
+    <li>夸大宣传广告</li>
+    <li>比较级、最高级、完全治愈等表述</li>
+    <li><span class="prohibited">绝对禁止：“100%预防性病”、“无副作用”</span></li>
+    <li><span class="exemption">（允许表述：“以预防性病为目的使用”）</span></li>
+</ul>
+
+<h3>（三）医疗器械广告监管遵守事项</h3>
+<p><strong>🚫 违规示例：</strong></p>
+<ul>
+    <li>以用户后记形式强调治疗效果。</li>
+    <li>使用 Before / After 对比图。</li>
+    <li>采用类似专家推荐等诱导性表述。</li>
+</ul>
+
+<h3>（四）成人用品的特殊注意事项</h3>
+<p>当产品同时具有“医疗器械+成人用品”双重属性时：</p>
+<ul>
+    <li><span class="mandatory">✅ 必须做：</span> 维持“成人身份认证”、限制未成年人访问。</li>
+    <li><span class="mandatory">✅ 必须做：</span> 同时遵守医疗器械广告监管规定。</li>
+</ul>
+
+<h2>五、医疗器械注册与审批流程</h2>
+
+<h3>（一）医疗器械分类与等级</h3>
+<ul>
+    <li><strong>许可（高危险性）：</strong> 主要为 3~4 等级</li>
+    <li><strong>认证（中危险性）：</strong> 主要为 2 等级</li>
+    <li><strong>申报（低危险性）：</strong> 主要为 1 等级</li>
+</ul>
+<div class="note-box">
+    <strong>📌 说明：</strong> 等级以产品功能及对人体危害程度为基准，由食药处（韩国食品医药品安全处）确定。<br>
+    <span class="mandatory">※ 避孕套、阴道冲洗器等通常属于 2 等级 → 属于认证对象。</span>
+</div>
+
+<h3>（二）进口医疗器械流程（需获得医疗器械进口许可）</h3>
+<ol>
+    <li>质量负责人指定</li>
+    <li>进口质量管理体系搭建</li>
+    <li>确保海外制造商信息</li>
+</ol>
+
+<h3>（三）医疗器械品种分类及等级确认</h3>
+<p>依据食药处告示《关于医疗器械品种及品种别等级的规定》，确定品目名称、品目代码、等级。</p>
+
+<h3>（四）技术文件准备</h3>
+<p><strong>基本提交资料：</strong></p>
+<ol>
+    <li>产品概要</li>
+    <li>使用目的</li>
+    <li>工作原理</li>
+    <li>设计图纸</li>
+    <li>原材料及构成</li>
+    <li>性能试验资料</li>
+    <li>安全性资料</li>
+    <li>风险管理文件</li>
+</ol>
+<p><span class="mandatory">※ 2等级及以上产品必须提供试验成绩书。</span></p>
+
+<h3>（五）GMP（制造及质量管理标准）审查</h3>
+<p>审查内容包括：</p>
+<ul>
+    <li>制造工艺</li>
+    <li>质量管理流程</li>
+    <li>文件管理</li>
+    <li>不良品及召回流程</li>
+</ul>
+<p>国内制造 → 现场实地调查 / 进口 → 以文件审查为主。<br>可通过食药处电子民愿系统申请（使用医疗器械电子民愿系统 EMEDI）。</p>
+
+<h3>（六）整体申请与审批周期</h3>
+<p>选型（许可/认证/申报） → 上传技术文件 → 缴纳手续费 → 审查 → 补充资料 → 最终批准（食药处经常要求补充资料，属于正常情况）</p>
+<p><strong>预计耗时：</strong></p>
+<ul>
+    <li><span class="deadline">申报：约 1~2周</span></li>
+    <li><span class="deadline">认证：约 2~6个月</span></li>
+    <li><span class="deadline">许可：约 6个月 ~ 1年以上</span></li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+        font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+        font-size: 11pt;
+        color: #333333;
+        line-height: 1.6;
+        margin: 60px 80px;
+        background-color: #ffffff;
+    }
+    h1.document-title {
+        font-family: 'SimHei', '黑体', sans-serif;
+        font-size: 20pt;
+        color: #1A4B82;
+        text-align: center;
+        margin-bottom: 20pt;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    h2 {
+        font-family: 'SimHei', '黑体', sans-serif;
+        font-size: 16pt;
+        color: #1A4B82;
+        margin-top: 14pt;
+        margin-bottom: 6pt;
+        font-weight: bold;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 4pt;
+    }
+    p {
+        text-indent: 2em;
+        margin-top: 4pt;
+        margin-bottom: 4pt;
+        text-align: justify;
+    }
+    /* 语义颜色类 */
+    .mandatory { color: #005BAC; font-weight: bold; }   /* 强制/提交 */
+    .deadline { color: #D35400; font-weight: bold; }    /* 时间期限 */
+    .prohibited { color: #C00000; font-weight: bold; }  /* 禁止/红线 */
+    .exemption { color: #27AE60; font-weight: bold; }   /* 豁免/例外 */
+    
+    ul, ol {
+        margin-top: 4pt;
+        margin-bottom: 8pt;
+        padding-left: 2em;
+    }
+    li {
+        margin-bottom: 5pt;
+        text-indent: 0em;
+    }
+    .note-box {
+        background-color: #F8FAFC;
+        border-left: 4px solid #1A4B82;
+        padding: 8pt 12pt;
+        margin-top: 6pt;
+        margin-bottom: 6pt;
+        font-size: 10.5pt;
+        color: #555555;
+    }
+    .warning-box {
+        background-color: #FFF8F0;
+        border-left: 4px solid #C00000;
+        padding: 8pt 12pt;
+        margin-top: 6pt;
+        margin-bottom: 6pt;
+        font-size: 10.5pt;
+        color: #555555;
+    }
+    .contact-list {
+        list-style: none;
+        padding-left: 0;
+        margin: 10px 0;
+    }
+    .contact-list li {
+        margin-bottom: 6px;
+    }
+</style>
+</head>
+<body>
+
+<h1 class="document-title">工作内容交接-生活化学</h1>
+
+<h2>询问价格及周期</h2>
+<ol>
+    <li>开发确定产品类型后，致电 FITI 客服（043-711-8963），询问该产品的测试费用及预计周期</li>
+    <li>将 FITI 的回复结果反馈给开发部门</li>
+</ol>
+
+<h2>检查MSDS报告</h2>
+<ol>
+    <li>确认 MSDS 报告中是否列出每种成分的 CAS 号码</li>
+    <li>访问成分查询网站：ncis.nier.go.kr<br>点击→“ √ ”<br>点击“동의”<br>点击“확인”</li>
+    <li>输入 CAS 号码，查询对应成分名称</li>
+    <li>根据产品类目，在法规文件中查询该成分是否属于限制/禁止成分<br>（举例：CAS号“68585-34-2”对应的成分名称为“로릴 에테르 황산 나트륨”，产品类目为“세정제”。在《(작성매뉴얼)안전확인대상 생활화학제품 적합확인 신청서류 작성 매뉴얼_제2024-139호》PDF中，查找该成分。若未查到，表示该成分含量不受限制，也不属于禁用成分）</li>
+    <li>若在“填写指南”中查到该类目下的该成分，需进一步核对成分含量是否符合规定<br>（举例：类目“세정제”中，成分“프로필렌글리콜”在“非喷射型 一般用途”产品中的含量上限为 <span class="deadline">30%</span>。如MSDS报告显示该成分含量超过 <span class="deadline">30%</span>，则必须反馈给开发部门，<span class="prohibited">不得私自修改成分含量</span>）</li>
+    <li>将 MSDS 报告的最终检查结果反馈给开发部门</li>
+</ol>
+
+<h2>填写申请书</h2>
+<div class="note-box">（FITI 试验所为价格最低的机构，因此统一委托 FITI 进行检测）</div>
+<p><strong>所需材料：</strong></p>
+<ul>
+    <li>产品的MSDS报告</li>
+    <li>样品（需拍照留底）</li>
+</ul>
+
+<ol>
+    <li>打开“填写指南”<br>（(작성매뉴얼)안전확인대상 생활화학제품 적합확인 신청서류 작성 매뉴얼_제2024-139호）</li>
+    <li>参照指南填写申请书</li>
+    <li>将申请书保存为图片型 PDF，发送至以下任一：
+        <br><br><strong>접수 문의</strong>
+        <ul class="contact-list">
+            <li>황지혜 주임 &nbsp; 043-711-8962 &nbsp; jhhwang@fiti.re.kr</li>
+            <li>정선빈 주임 &nbsp; 043-711-8963 &nbsp; sbjung@fiti.re.kr</li>
+            <li>배경미 전임 &nbsp; 043-711-8862 &nbsp; kmb@fiti.re.kr</li>
+        </ul>
+    </li>
+    <li>申请书填写完毕后，将样品交给酸酸，由酸酸统一寄送至FITI试验所<br><br>地址：충청북도 청주시 청원구 오창읍 양청 3 길 21<br>电话：043-711-8800<br>收件人：FITI 시험연구원（황지혜 주임）</li>
+</ol>
+
+<h2>关于申报</h2>
+<div class="warning-box">
+    <span class="prohibited">注册账号时请注意：申报时的公司名称必须与测试报告上的公司名称完全一致</span><br>
+    （举例：若测试报告上的公司名称为“장샤오롱 유한회사”，则申报时的公司名称也必须为“장샤오롱 유한회사”）
+</div>
+<ol>
+    <li>访问网址：<span class="mandatory">https://chemp.mcee.go.kr/login</span></li>
+    <li>点击“회원등록”</li>
+    <li>点击“동의”</li>
+    <li>点击“이용약관에 동의합니다”</li>
+    <li>点击“진행”</li>
+    <li>输入 营业执照号码</li>
+    <li>点击“본인인증 및 조회”</li>
+    <li>点击“확인”</li>
+</ol>
+<div class="note-box">（此步骤需本人实名认证，请将当前网页链接及提示文字“需要实名”发送给老板，由老板完成认证）</div>
+<ol start="9">
+    <li>用KAKAO进行实名认证</li>
+    <li>按照步骤填写信息</li>
+</ol>
+
+<h2>进行申报</h2>
+<ol start="3">
+    <li>访问网址：<span class="mandatory">https://chemp.mcee.go.kr/login</span></li>
+    <li>登录账号及密码</li>
+    <li>点击“생활화학제품”</li>
+    <li>点击“√신규신고서 작성”</li>
+    <li>제조/수입 ：수입</li>
+    <li>제조국(수입인경우)：중국</li>
+    <li>제조회사(수입인경우)：선전 셩위 인터내셔널 트레이드 코., 엘티디.</li>
+    <li>제품명：按照测试报告上的信息填写 → 点击“중복확인”</li>
+    <li>품목·용도：按照测试报告上的信息填写</li>
+    <li>제형：按照测试报告上的信息填写</li>
+    <li>중량/용량/매수/크기：按照测试报告上的信息填写</li>
+    <li>유통기한：按照测试报告上的信息填写</li>
+    <li>点击“△확인결과서 파일 업로드”</li>
+    <li>발행번호：测试报告上的发行号码</li>
+    <li>시험·검사기관：FITI시험연구원</li>
+    <li>유효기간：按照测试报告上的信息填写</li>
+    <li>확인결과서 파일：点击“업로드”上传测试报告</li>
+    <li>함유성분(전성분)：点击“검색” → 검색어：选择“CAS NO.” → 输入成分的cas号 → 点击“검색”→ 点击“선택” → 点击“한글명  - 적용”→ 点击“확인”</li>
+    <li>용도(기능)：询问AI选择</li>
+    <li>点击“물질추가”（把所有成分填写完成）</li>
+    <li>어린이보호포장 대상여부：비대상</li>
+    <li>사용상 주의사항：点击“？”挑一个 → 点击“필수문구 확인하기”</li>
+    <li>응급처치：同上</li>
+    <li>제품 사진：上传产品的照片</li>
+    <li>안전기준 적합 확인용 제품의 성분 및 배합비(pdf)：上传文件</li>
+    <li>点击“신고사항검증”</li>
+    <li>点击“제출”</li>
+</ol>
+
+</body>
+</html>

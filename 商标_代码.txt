@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>商标 - 合规资料库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif; background: #f4f7f9; color: #333333; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 40px 20px; }
+        .container { width: 100%; max-width: 1000px; background: #ffffff; border-radius: 24px; padding: 50px 40px; box-shadow: 0 20px 50px rgba(26, 75, 130, 0.08); }
+        .header { text-align: center; margin-bottom: 45px; position: relative; }
+        .header h1 { font-size: 28px; color: #1A4B82; letter-spacing: 2px; margin-bottom: 10px; }
+        .header p { font-size: 15px; color: #7A8C9E; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+        .header .line { width: 60px; height: 4px; background: #1A4B82; margin: 16px auto 0; border-radius: 4px; }
+        
+        /* 显眼的返回按钮 */
+        .back-btn-wrapper { text-align: left; margin-bottom: 16px; }
+        .back-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #F2F6FA;
+            color: #1A4B82;
+            border: 1px solid #c9d9e8;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .back-btn:hover {
+            background-color: #1A4B82;
+            color: #ffffff;
+            border-color: #1A4B82;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(26, 75, 130, 0.2);
+        }
+
+        .sub-category { margin-top: 32px; margin-bottom: 16px; }
+        .sub-category:first-of-type { margin-top: 0; }
+        .sub-category h2 { font-size: 20px; color: #1A4B82; font-weight: 600; border-left: 5px solid #1A4B82; padding-left: 12px; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        /* 大卡片样式 */
+        .card { background: #ffffff; border: 1px solid #eef2f5; border-radius: 16px; padding: 30px 24px; text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.25s ease; position: relative; overflow: hidden; }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 6px; height: 100%; background: #1A4B82; opacity: 0; transition: opacity 0.25s ease; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(26, 75, 130, 0.12); border-color: transparent; }
+        .card:hover::before { opacity: 1; }
+        .card-icon { font-size: 42px; margin-bottom: 16px; display: block; }
+        .card-title { font-size: 18px; font-weight: 600; color: #1A4B82; margin-bottom: 8px; }
+        .card-desc { font-size: 13px; color: #7A8C9E; line-height: 1.5; flex-grow: 1; margin-bottom: 16px; }
+        .card-btn { font-size: 14px; font-weight: 500; color: #ffffff; background: #1A4B82; padding: 8px 24px; border-radius: 20px; transition: background 0.2s; }
+        .card:hover .card-btn { background: #005BAC; }
+
+        /* 小卡片样式（用于45个类目） */
+        .grid-small { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 12px; }
+        .small-card {
+            background: #ffffff;
+            border: 1px solid #eef2f5;
+            border-radius: 8px;
+            padding: 12px 8px;
+            text-decoration: none;
+            text-align: center;
+            color: #333333;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        .small-card:hover {
+            background-color: #F2F6FA;
+            border-color: #1A4B82;
+            color: #1A4B82;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 600px) { .container { padding: 30px 20px; } .header h1 { font-size: 22px; } .grid { grid-template-columns: 1fr; } .grid-small { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-btn-wrapper">
+                <a href="index.html" class="back-btn">◀ 返回资料库首页</a>
+            </div>
+            <h1>商标注册合规资料</h1>
+            <p>本类目包含商标注册操作手册、优先审查申请说明，以及全套尼斯国际商品分类表（共45类）供您查阅。</p>
+            <div class="line"></div>
+        </div>
+
+        <!-- 子类目 1：申请资料 -->
+        <div class="sub-category">
+            <h2>📄 商标申请资料</h2>
+        </div>
+        <div class="grid">
+            <a href="商标注册手册.html" class="card">
+                <span class="card-icon">📖</span>
+                <div class="card-title">商标注册手册</div>
+                <div class="card-desc">韩国特许厅账号注册、查询、认证书登记、商标申请、加急申请及付款流程。</div>
+                <span class="card-btn">查看资料 →</span>
+            </a>
+            <a href="상표 우선심사 신청 설명서.pdf" class="card">
+                <span class="card-icon">⚖️</span>
+                <div class="card-title">상표 우선심사 신청 설명서</div>
+                <div class="card-desc">韩国商标优先审查申请说明书（优先审查申请理由及证明资料撰写指南）。</div>
+                <span class="card-btn">查看文件 →</span>
+            </a>
+        </div>
+
+        <!-- 子类目 2：45个类目表 -->
+        <div class="sub-category">
+            <h2>📋 尼斯国际商品分类表（1 - 45类）</h2>
+            <p style="margin-bottom: 16px; color: #7A8C9E; font-size: 13px;">请确保您的 Excel 文件存放在主文件夹的 <code>商标类目/</code> 子文件夹中，并按顺序命名为 <code>1类.xlsx</code> 至 <code>45类.xlsx</code>。</p>
+        </div>
+        <div class="grid-small">
+            <!-- 自动生成 1-45 类链接 -->
+            <a href="商标类目/1类.xlsx" class="small-card">第1类</a>
+            <a href="商标类目/2类.xlsx" class="small-card">第2类</a>
+            <a href="商标类目/3类.xlsx" class="small-card">第3类</a>
+            <a href="商标类目/4类.xlsx" class="small-card">第4类</a>
+            <a href="商标类目/5类.xlsx" class="small-card">第5类</a>
+            <a href="商标类目/6类.xlsx" class="small-card">第6类</a>
+            <a href="商标类目/7类.xlsx" class="small-card">第7类</a>
+            <a href="商标类目/8类.xlsx" class="small-card">第8类</a>
+            <a href="商标类目/9类.xlsx" class="small-card">第9类</a>
+            <a href="商标类目/10类.xlsx" class="small-card">第10类</a>
+            <a href="商标类目/11类.xlsx" class="small-card">第11类</a>
+            <a href="商标类目/12类.xlsx" class="small-card">第12类</a>
+            <a href="商标类目/13类.xlsx" class="small-card">第13类</a>
+            <a href="商标类目/14类.xlsx" class="small-card">第14类</a>
+            <a href="商标类目/15类.xlsx" class="small-card">第15类</a>
+            <a href="商标类目/16类.xlsx" class="small-card">第16类</a>
+            <a href="商标类目/17类.xlsx" class="small-card">第17类</a>
+            <a href="商标类目/18类.xlsx" class="small-card">第18类</a>
+            <a href="商标类目/19类.xlsx" class="small-card">第19类</a>
+            <a href="商标类目/20类.xlsx" class="small-card">第20类</a>
+            <a href="商标类目/21类.xlsx" class="small-card">第21类</a>
+            <a href="商标类目/22类.xlsx" class="small-card">第22类</a>
+            <a href="商标类目/23类.xlsx" class="small-card">第23类</a>
+            <a href="商标类目/24类.xlsx" class="small-card">第24类</a>
+            <a href="商标类目/25类.xlsx" class="small-card">第25类</a>
+            <a href="商标类目/26类.xlsx" class="small-card">第26类</a>
+            <a href="商标类目/27类.xlsx" class="small-card">第27类</a>
+            <a href="商标类目/28类.xlsx" class="small-card">第28类</a>
+            <a href="商标类目/29类.xlsx" class="small-card">第29类</a>
+            <a href="商标类目/30类.xlsx" class="small-card">第30类</a>
+            <a href="商标类目/31类.xlsx" class="small-card">第31类</a>
+            <a href="商标类目/32类.xlsx" class="small-card">第32类</a>
+            <a href="商标类目/33类.xlsx" class="small-card">第33类</a>
+            <a href="商标类目/34类.xlsx" class="small-card">第34类</a>
+            <a href="商标类目/35类.xlsx" class="small-card">第35类</a>
+            <a href="商标类目/36类.xlsx" class="small-card">第36类</a>
+            <a href="商标类目/37类.xlsx" class="small-card">第37类</a>
+            <a href="商标类目/38类.xlsx" class="small-card">第38类</a>
+            <a href="商标类目/39类.xlsx" class="small-card">第39类</a>
+            <a href="商标类目/40类.xlsx" class="small-card">第40类</a>
+            <a href="商标类目/41类.xlsx" class="small-card">第41类</a>
+            <a href="商标类目/42类.xlsx" class="small-card">第42类</a>
+            <a href="商标类目/43类.xlsx" class="small-card">第43类</a>
+            <a href="商标类目/44类.xlsx" class="small-card">第44类</a>
+            <a href="商标类目/45类.xlsx" class="small-card">第45类</a>
+        </div>
+    </div>
+</body>
+</html>

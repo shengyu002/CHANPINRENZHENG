@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+    body {
+        font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+        font-size: 11pt;
+        color: #333333;
+        line-height: 1.6;
+        margin: 60px 80px;
+        background-color: #ffffff;
+    }
+    h1.document-title {
+        font-family: 'SimHei', '黑体', sans-serif;
+        font-size: 20pt;
+        color: #1A4B82;
+        text-align: center;
+        margin-bottom: 20pt;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    h2 {
+        font-family: 'SimHei', '黑体', sans-serif;
+        font-size: 16pt;
+        color: #1A4B82;
+        margin-top: 14pt;
+        margin-bottom: 6pt;
+        font-weight: bold;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 4pt;
+    }
+    h3 {
+        font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+        font-size: 13pt;
+        color: #333333;
+        margin-top: 10pt;
+        margin-bottom: 4pt;
+        font-weight: bold;
+    }
+    p {
+        text-indent: 2em;
+        margin-top: 4pt;
+        margin-bottom: 4pt;
+        text-align: justify;
+    }
+    /* 语义颜色类 */
+    .mandatory { color: #005BAC; font-weight: bold; }   /* 强制/提交/关键动作 */
+    .deadline { color: #D35400; font-weight: bold; }    /* 时间期限 */
+    .prohibited { color: #C00000; font-weight: bold; }  /* 禁止/红线 */
+    .exemption { color: #27AE60; font-weight: bold; }   /* 豁免/例外 */
+    
+    ul, ol {
+        margin-top: 4pt;
+        margin-bottom: 8pt;
+        padding-left: 2em;
+    }
+    li {
+        margin-bottom: 5pt;
+        text-indent: 0em;
+    }
+    .sub-list {
+        list-style-type: lower-alpha;
+        margin-top: 2pt;
+        margin-bottom: 2pt;
+        padding-left: 2em;
+    }
+    .sub-list-2 {
+        list-style-type: decimal;
+        margin-top: 2pt;
+        margin-bottom: 2pt;
+        padding-left: 2em;
+    }
+    .note-box {
+        background-color: #F8FAFC;
+        border-left: 4px solid #1A4B82;
+        padding: 8pt 12pt;
+        margin-top: 6pt;
+        margin-bottom: 6pt;
+        font-size: 10.5pt;
+        color: #555555;
+    }
+    .warning-box {
+        background-color: #FFF8F0;
+        border-left: 4px solid #C00000;
+        padding: 8pt 12pt;
+        margin-top: 6pt;
+        margin-bottom: 6pt;
+        font-size: 10.5pt;
+        color: #555555;
+    }
+</style>
+</head>
+<body>
+
+<h1 class="document-title">工作内容交接-商标版权</h1>
+
+<h2>注册账号：</h2>
+<ol>
+    <li><span class="mandatory">访问</span> 특허로</li>
+    <li><span class="mandatory">点击</span> “로그인”</li>
+    <li><span class="mandatory">点击</span> “특허고객번호 신청”</li>
+    <li><span class="mandatory">点击</span> “특허고객등록”</li>
+    <li><span class="mandatory">点击</span> “국내법인”</li>
+    <li><span class="mandatory">点击</span> “가능”</li>
+    <li><span class="mandatory">填写以下信息</span>
+        <ul>
+            <li><strong>법인 등록번호：</strong>根据营业执照上的法人号码填写 → <span class="mandatory">点击</span> “발급확인”</li>
+            <li><strong>사업자 번호：</strong>根据营业执照上的营业执照号码填写 → <span class="mandatory">点击</span> “발급확인”</li>
+            <li><strong>성명(국문)：</strong>填写公司韩文名称（参照营业执照）</li>
+            <li><strong>성명(영문)：</strong>填写公司英文名称（若营业执照未显示英文名称，可借助 AI 翻译）</li>
+        </ul>
+    </li>
+    <li><span class="mandatory">点击</span> “다음”</li>
+    <li><span class="mandatory">继续填写：</span>
+        <ul>
+            <li><strong>시도/국적：</strong>根据营业执照上的地址选择</li>
+            <li><strong>인감도장/서명 이미지 첨부：</strong>上传法人印章图片</li>
+            <li><strong>국내주소</strong>（根据营业执照上的地址）：<span class="mandatory">点击</span> “도로명검색” → 输入地址信息 → <span class="mandatory">点击</span> “확인”→ 输入“상세주소입력”→ <span class="mandatory">点击</span> “등록”</li>
+        </ul>
+    </li>
+    <li>输入“전화번호”</li>
+    <li><strong>전자 등록증신청：</strong>신청</li>
+    <li><span class="mandatory">截图并保存当前页面</span>（用于后续查询进度）</li>
+</ol>
+
+<h2>查询账号进度：</h2>
+<ol>
+    <li><span class="mandatory">点击</span> “특허고객번호 신청”</li>
+    <li><span class="mandatory">点击</span> “신청결과조회”</li>
+    <li><strong>접수번호：</strong>输入之前截图保存的单号</li>
+    <li><span class="mandatory">点击</span> “검색”</li>
+    <li>查看“처리상태 및 결과”</li>
+</ol>
+
+<h2>登记认证书：</h2>
+<ol>
+    <li><span class="mandatory">点击</span> “공동인증서 등록”</li>
+    <li><span class="mandatory">点击</span> “특허고객번호조회”</li>
+    <li>输入“법인등록번호”：营业执照上的法人号码 → <span class="mandatory">点击</span> “검색”</li>
+    <li>输入查询到的“특허고객번호”</li>
+    <li><span class="mandatory">点击</span> “신청”</li>
+    <li><span class="mandatory">点击</span> “등록”</li>
+    <li><span class="mandatory">点击</span> “하드디스크이동식”</li>
+    <li><span class="mandatory">点击</span> “공인인증서 가져오기”→ 选择证书并输入密码</li>
+    <li><span class="mandatory">点击</span> “등록”</li>
+</ol>
+
+<h2>登录账号：</h2>
+<ol>
+    <li><span class="mandatory">点击</span> “로그인”</li>
+    <li><span class="mandatory">点击</span> “공동인증서로 로그인”</li>
+    <li><span class="mandatory">点击</span> “하드디스크이동식”</li>
+    <li><span class="mandatory">点击</span> “공인인증서 가져오기”</li>
+    <li>输入“인증서 비밀번호”</li>
+    <li><span class="mandatory">点击</span> “브라우저에 인증서 저장”</li>
+    <li><span class="mandatory">点击</span> “확인”</li>
+</ol>
+
+<h2>提交商标注册申请：</h2>
+<div class="note-box">(登录账号后操作)</div>
+<ol>
+    <li><span class="mandatory">点击</span> “상표”</li>
+    <li><span class="mandatory">点击</span> “출원절차서류”</li>
+    <li><span class="mandatory">点击</span> “상표등록출원서”
+        <ol>
+            <li><strong>① 등록대상：</strong>
+                <ol>
+                    <li><span class="mandatory">点击</span> “추가”</li>
+                    <li>选择“상품류”</li>
+                    <li>“상품검색” → 输入提前选定的指定类目 → <span class="mandatory">点击</span> “검색”</li>
+                    <li><span class="mandatory">点击</span> “선택추가”</li>
+                    <li>满 10 个小类之后，<span class="mandatory">点击</span> “지정상품 추가”</li>
+                    <li><span class="mandatory">点击</span> “적용”</li>
+                </ol>
+            </li>
+            <li><strong>② 상표유형：</strong>
+                <ol>
+                    <li><span class="mandatory">点击</span> “추가”</li>
+                    <li><span class="mandatory">点击</span> “적용”</li>
+                    <li><span class="mandatory">点击</span> “확인”</li>
+                </ol>
+            </li>
+            <li><strong>③ 상표견본：</strong>
+                <ul>
+                    <li><strong>文字申请时：</strong><br><span class="mandatory">点击</span> “문자를 입력하여 견본이미지로 변환”<br>输入商标名称 → <span class="mandatory">点击</span> “변환”</li>
+                    <li><strong>图片申请时：</strong><br><span class="mandatory">点击</span> “추가”</li>
+                </ul>
+            </li>
+            <li><strong>④ 最终确认：</strong>
+                <ol>
+                    <li>查看“미리보기”预览，确认无误后继续</li>
+                    <li>整体检查一遍填写信息，确认没有错误</li>
+                    <li><span class="mandatory">点击</span> “작성완료 및 서명”</li>
+                    <li><span class="mandatory">点击</span> “신청”</li>
+                </ol>
+            </li>
+        </ol>
+    </li>
+</ol>
+
+<h2>加急申请：</h2>
+<ol>
+    <li>提前写好“상표 우선심사 신청 설명서”并保存为图片型 PDF<br><span class="deadline">（文件名不可以有空格）</span></li>
+    <li><span class="mandatory">点击</span> “상표”</li>
+    <li><span class="mandatory">点击</span> “중간절차 서류”</li>
+    <li><span class="mandatory">点击</span> “우선심사신청서”
+        <ol>
+            <li><strong>填写以下内容：</strong>
+                <ul>
+                    <li><strong>출원번호：</strong>输入出院号码</li>
+                    <li><strong>상품류：</strong>商品的类目（例如：제 1 류）</li>
+                    <li><strong>우선심사신청료：</strong>1</li>
+                    <li><strong>첨부서류：</strong><span class="mandatory">点击</span> “추가” → “첨부서류선택” → “우선심사 신청 설명서” → <span class="mandatory">点击</span> “파일찾기”上传提前准备好的 PDF → <span class="mandatory">点击</span> “추가” → <span class="mandatory">点击</span> “적용”</li>
+                </ul>
+            </li>
+        </ol>
+    </li>
+    <li><span class="mandatory">点击</span> “작성완료 및 서명”</li>
+    <li><span class="mandatory">点击</span> “신청”</li>
+</ol>
+
+<h2>付款：</h2>
+<ol>
+    <li><span class="mandatory">点击</span> “수수료관리”</li>
+    <li><span class="mandatory">点击</span> “수수료 납부”</li>
+    <li><span class="mandatory">点击</span> “온라인 납부”</li>
+    <li>选择要付款的订单</li>
+    <li><span class="mandatory">点击</span> “계좌이체”</li>
+    <li><span class="mandatory">点击</span> “결제” → “확인”</li>
+    <li><span class="mandatory">点击</span> “다른결제”</li>
+    <li><span class="mandatory">点击</span> “일반결제”</li>
+    <li><span class="mandatory">点击</span> “다음”</li>
+    <li>输入“계좌번호”+“계좌 비밀번호”（找财务）</li>
+    <li><span class="mandatory">点击</span> “법인”</li>
+    <li>输入“사업자등록번호”（营业执照号码）</li>
+    <li><span class="mandatory">点击</span> “결제”</li>
+</ol>
+
+<h2>进度跟踪（商标审查周期约 4 个月）：</h2>
+<ol>
+    <li>登录账号后，<span class="mandatory">点击</span> “출원/심사”</li>
+    <li><span class="mandatory">点击</span> “출원번호”查看申请进度</li>
+    <li><span class="deadline">建议每隔 3 天登录查看一次</span></li>
+</ol>
+
+</body>
+</html>
