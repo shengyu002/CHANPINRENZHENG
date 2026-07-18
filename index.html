@@ -26,14 +26,21 @@
     </div>
 
     <script>
-        // ⬇️ 这里是您设置的密码，您可以随时修改它
-        const CORRECT_CODE = "692483chl@"; 
+        // ⬇️ 这里是密码，您可以随时修改它
+        const CORRECT_CODE = "888888"; 
+
+        // ⬇️ 页面加载时，检查当前浏览器会话是否已经解锁过
+        if (sessionStorage.getItem("isUnlocked") === "true") {
+            // 如果已经解锁过，直接跳过密码框，跳转到真实主页
+            window.location.href = "main.html";
+        }
 
         function checkCode() {
             var inputCode = document.getElementById("inviteCode").value;
             var errorMsg = document.getElementById("errorMsg");
             if (inputCode === CORRECT_CODE) {
-                // 密码正确，跳转到原本的九宫格主页（需要确保 index.html 提前保存为 main.html）
+                // ⬇️ 密码正确后，记录解锁状态
+                sessionStorage.setItem("isUnlocked", "true");
                 window.location.href = "main.html";
             } else {
                 errorMsg.style.display = "block";
