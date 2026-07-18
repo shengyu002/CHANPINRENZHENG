@@ -4,44 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>产品认证合规资料库 - 身份验证</title>
+    <!-- 引入 Font Awesome 图标库 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
-        body { font-family: 'Microsoft YaHei', sans-serif; background: #f4f7f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
-        .login-box { background: #ffffff; padding: 40px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); text-align: center; max-width: 360px; width: 100%; }
-        h2 { color: #1A4B82; margin-bottom: 8px; }
-        p { color: #7A8C9E; font-size: 14px; margin-bottom: 24px; }
-        input { width: 100%; padding: 12px; border: 1px solid #eef2f5; border-radius: 8px; margin-bottom: 16px; box-sizing: border-box; outline: none; }
-        input:focus { border-color: #1A4B82; }
-        button { width: 100%; padding: 12px; background: #1A4B82; color: #fff; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background 0.2s; }
-        button:hover { background: #005BAC; }
-        .error { color: #C00000; font-size: 13px; margin-top: 12px; display: none; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif;
+            background: #f8fafc;
+            color: #334155;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 60px 50px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            margin-bottom: 24px;
+        }
+        .header { text-align: center; margin-bottom: 50px; }
+        .header h1 { font-size: 30px; color: #0f172a; font-weight: 600; letter-spacing: 1px; margin-bottom: 10px; }
+        .header p { font-size: 15px; color: #94a3b8; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+        .header .line { width: 50px; height: 4px; background: #0f172a; margin: 16px auto 0; border-radius: 4px; }
+
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #eef2f6;
+            border-radius: 20px;
+            padding: 32px 20px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border-color: #cbd5e1;
+        }
+        .card-icon {
+            font-size: 46px;
+            margin-bottom: 18px;
+            display: block;
+            color: #1A4B82;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .card:hover .card-icon {
+            transform: scale(1.08);
+            color: #005BAC;
+        }
+        .card-title { font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
+        .card-desc { font-size: 13px; color: #94a3b8; line-height: 1.5; flex-grow: 1; margin-bottom: 20px; }
+        .card-btn {
+            font-size: 14px;
+            font-weight: 500;
+            color: #0f172a;
+            background: #f1f5f9;
+            padding: 6px 24px;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+        .card:hover .card-btn { background: #1A4B82; color: #ffffff; }
+
+        .footer { text-align: center; font-size: 13px; color: #cbd5e1; padding: 10px 0; max-width: 1000px; width: 100%; }
+        .footer span { color: #0f172a; font-weight: 500; }
+
+        @media (max-width: 800px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+        @media (max-width: 500px) { .container { padding: 30px 20px; } .header h1 { font-size: 24px; } .grid { grid-template-columns: 1fr; } }
+        
+        /* 密码输入框样式 */
+        .login-box { max-width: 360px; width: 100%; text-align: center; margin: 0 auto; }
+        .login-input { width: 100%; padding: 14px; border: 1px solid #eef2f6; border-radius: 12px; margin-bottom: 16px; outline: none; font-size: 16px; }
+        .login-input:focus { border-color: #1A4B82; }
+        .login-btn { width: 100%; padding: 14px; background: #1A4B82; color: #fff; border: none; border-radius: 12px; font-size: 16px; cursor: pointer; transition: 0.2s; }
+        .login-btn:hover { background: #005BAC; }
+        .login-error { color: #C00000; font-size: 13px; margin-top: 12px; display: none; }
     </style>
 </head>
 <body>
-    <div class="login-box">
-        <h2>🔒 内部资料库</h2>
-        <p>请输入内部访问邀请码以继续查看资料</p>
-        <input type="password" id="inviteCode" placeholder="请输入邀请码 / 密码" autofocus>
-        <button onclick="checkCode()">进入资料库</button>
-        <div class="error" id="errorMsg">❌ 邀请码错误，请向管理员获取</div>
+    <!-- 密码验证区域 -->
+    <div class="container" id="loginWrapper">
+        <div class="login-box">
+            <h2 style="color: #0f172a; margin-bottom: 8px;">🔒 内部资料库</h2>
+            <p style="color: #94a3b8; font-size: 15px; margin-bottom: 24px;">请输入内部访问邀请码以继续查看资料</p>
+            <input type="password" class="login-input" id="inviteCode" placeholder="请输入邀请码 / 密码" autofocus>
+            <button class="login-btn" onclick="checkCode()">进入资料库</button>
+            <div class="login-error" id="errorMsg">❌ 邀请码错误，请向管理员获取</div>
+        </div>
     </div>
 
-    <script>
-        // ⬇️ 这里是密码，您可以随时修改它
-        const CORRECT_CODE = "888888"; 
+    <!-- 真正的九宫格主页（默认隐藏） -->
+    <div class="container" id="mainWrapper" style="display: none;">
+        <div class="header">
+            <h1>产品认证合规资料库</h1>
+            <p>点击下方类目卡片，快速查看对应的产品认证细则、法定流程及合规要求。</p>
+            <div class="line"></div>
+        </div>
 
-        // ⬇️ 页面加载时，检查当前浏览器会话是否已经解锁过
+        <div class="grid">
+            <a href="图片.html" class="card">
+                <i class="card-icon fa-regular fa-image"></i>
+                <div class="card-title">图片</div>
+                <div class="card-desc">图片版权注册 SOP 及申请材料、职务著作确认书等模板文件。</div>
+                <span class="card-btn">进入目录 →</span>
+            </a>
+            <a href="商标.html" class="card">
+                <i class="card-icon fa-regular fa-registered"></i>
+                <div class="card-title">商标</div>
+                <div class="card-desc">商标注册手册、优先审查申请书及尼斯国际商品分类表（1-45类）。</div>
+                <span class="card-btn">进入目录 →</span>
+            </a>
+            <a href="KC.html" class="card">
+                <i class="card-icon fa-solid fa-certificate"></i>
+                <div class="card-title">KC</div>
+                <div class="card-desc">电器安全认证及确认产品目录与申请指南，中韩文对照。</div>
+                <span class="card-btn">进入目录 →</span>
+            </a>
+            <a href="电磁波认证合规手册.html" class="card">
+                <i class="card-icon fa-solid fa-satellite-dish"></i>
+                <div class="card-title">电磁波认证合规手册</div>
+                <div class="card-desc">符合性评估分类、认证注册流程、临时认证规则及设备清单示例。</div>
+                <span class="card-btn">查看资料 →</span>
+            </a>
+            <a href="生活化学.html" class="card">
+                <i class="card-icon fa-solid fa-flask"></i>
+                <div class="card-title">生活化学</div>
+                <div class="card-desc">包含《生活化学SOP》及《安全确认对象生活化学产品的标示事项》。</div>
+                <span class="card-btn">进入目录 →</span>
+            </a>
+            <a href="工业产品.html" class="card">
+                <i class="card-icon fa-solid fa-industry"></i>
+                <div class="card-title">工业产品</div>
+                <div class="card-desc">工业安全保健法安全认证对象及审查所需提交资料，中韩文对照。</div>
+                <span class="card-btn">进入目录 →</span>
+            </a>
+            <a href="化妆品.html" class="card">
+                <i class="card-icon fa-regular fa-droplet"></i>
+                <div class="card-title">化妆品</div>
+                <div class="card-desc">化妆品责任销售合规手册、管理员资格条件及相关法定条款梳理。</div>
+                <span class="card-btn">进入目录 →</span>
+            </a>
+            <a href="成人用品及医疗器械.html" class="card">
+                <i class="card-icon fa-solid fa-notes-medical"></i>
+                <div class="card-title">成人用品及医疗器械</div>
+                <div class="card-desc">合规指引中文版及韩国医疗器械销售商指南、品目分类等韩文法规。</div>
+                <span class="card-btn">进入目录 →</span>
+            </a>
+            <a href="快捷入口.html" class="card">
+                <i class="card-icon fa-solid fa-rocket"></i>
+                <div class="card-title">快捷入口</div>
+                <div class="card-desc">直达韩国知识产权局、生活化学、KC认证、电磁波现状查询。</div>
+                <span class="card-btn">进入目录 →</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer"><span>产品认证合规资料库</span> · 仅供公司内部使用 · 版本 2.0</div>
+
+    <script>
+        // ⬇️ 密码
+        const CORRECT_CODE = "692483chl@"; 
+
+        // 检查是否已解锁
         if (sessionStorage.getItem("isUnlocked") === "true") {
-            // 如果已经解锁过，直接跳过密码框，跳转到真实主页
-            window.location.href = "main.html";
+            // 如果已解锁，直接显示主页
+            document.getElementById("loginWrapper").style.display = "none";
+            document.getElementById("mainWrapper").style.display = "block";
         }
 
         function checkCode() {
             var inputCode = document.getElementById("inviteCode").value;
             var errorMsg = document.getElementById("errorMsg");
             if (inputCode === CORRECT_CODE) {
-                // ⬇️ 密码正确后，记录解锁状态
+                // 密码正确，记录解锁状态
                 sessionStorage.setItem("isUnlocked", "true");
-                window.location.href = "main.html";
+                // 隐藏输入框，显示主页
+                document.getElementById("loginWrapper").style.display = "none";
+                document.getElementById("mainWrapper").style.display = "block";
             } else {
                 errorMsg.style.display = "block";
                 document.getElementById("inviteCode").value = "";
