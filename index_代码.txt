@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>产品认证合规资料库 - 身份验证</title>
-    <!-- 引入 Font Awesome 图标库 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -20,6 +18,8 @@
             padding: 40px 20px;
         }
         .container {
+            position: relative;
+            z-index: 1;
             width: 100%;
             max-width: 1000px;
             background: #ffffff;
@@ -32,9 +32,7 @@
         .header h1 { font-size: 30px; color: #0f172a; font-weight: 600; letter-spacing: 1px; margin-bottom: 10px; }
         .header p { font-size: 15px; color: #94a3b8; max-width: 500px; margin: 0 auto; line-height: 1.6; }
         .header .line { width: 50px; height: 4px; background: #0f172a; margin: 16px auto 0; border-radius: 4px; }
-
         .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-
         .card {
             background: #ffffff;
             border: 1px solid #eef2f6;
@@ -53,132 +51,63 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
             border-color: #cbd5e1;
         }
-        .card-icon {
-            font-size: 46px;
-            margin-bottom: 18px;
-            display: block;
-            color: #1A4B82;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        .card:hover .card-icon {
-            transform: scale(1.08);
-            color: #005BAC;
-        }
+        .card-icon { font-size: 46px; margin-bottom: 18px; display: block; transition: transform 0.3s ease; }
+        .card:hover .card-icon { transform: scale(1.08); }
         .card-title { font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
         .card-desc { font-size: 13px; color: #94a3b8; line-height: 1.5; flex-grow: 1; margin-bottom: 20px; }
-        .card-btn {
-            font-size: 14px;
-            font-weight: 500;
-            color: #0f172a;
-            background: #f1f5f9;
-            padding: 6px 24px;
-            border-radius: 20px;
-            transition: all 0.2s;
-        }
+        .card-btn { font-size: 14px; font-weight: 500; color: #0f172a; background: #f1f5f9; padding: 6px 24px; border-radius: 20px; transition: all 0.2s; }
         .card:hover .card-btn { background: #1A4B82; color: #ffffff; }
-
         .footer { text-align: center; font-size: 13px; color: #cbd5e1; padding: 10px 0; max-width: 1000px; width: 100%; }
         .footer span { color: #0f172a; font-weight: 500; }
-
         @media (max-width: 800px) { .grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
         @media (max-width: 500px) { .container { padding: 30px 20px; } .header h1 { font-size: 24px; } .grid { grid-template-columns: 1fr; } }
-        
-        /* 密码输入框样式 */
         .login-box { max-width: 360px; width: 100%; text-align: center; margin: 0 auto; }
         .login-input { width: 100%; padding: 14px; border: 1px solid #eef2f6; border-radius: 12px; margin-bottom: 16px; outline: none; font-size: 16px; }
         .login-input:focus { border-color: #1A4B82; }
         .login-btn { width: 100%; padding: 14px; background: #1A4B82; color: #fff; border: none; border-radius: 12px; font-size: 16px; cursor: pointer; transition: 0.2s; }
         .login-btn:hover { background: #005BAC; }
         .login-error { color: #C00000; font-size: 13px; margin-top: 12px; display: none; }
+        #fireworks-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; display: none; }
     </style>
 </head>
 <body>
-    <!-- 密码验证区域 -->
+
     <div class="container" id="loginWrapper">
         <div class="login-box">
             <h2 style="color: #0f172a; margin-bottom: 8px;">🔒 内部资料库</h2>
             <p style="color: #94a3b8; font-size: 15px; margin-bottom: 24px;">请输入内部访问邀请码以继续查看资料</p>
-            <input type="password" class="login-input" id="inviteCode" placeholder="请输入邀请码 / 密码" autofocus>
+            <input type="password" class="login-input" id="inviteCode" placeholder="请输入邀请码 / 密码" autofocus />
             <button class="login-btn" onclick="checkCode()">进入资料库</button>
             <div class="login-error" id="errorMsg">❌ 邀请码错误，请向管理员获取</div>
         </div>
     </div>
 
-    <!-- 真正的九宫格主页（默认隐藏） -->
     <div class="container" id="mainWrapper" style="display: none;">
         <div class="header">
             <h1>产品认证合规资料库</h1>
             <p>点击下方类目卡片，快速查看对应的产品认证细则、法定流程及合规要求。</p>
             <div class="line"></div>
         </div>
-
         <div class="grid">
-            <a href="图片.html" class="card">
-                <i class="card-icon fa-regular fa-image"></i>
-                <div class="card-title">图片</div>
-                <div class="card-desc">图片版权注册 SOP 及申请材料、职务著作确认书等模板文件。</div>
-                <span class="card-btn">进入目录 →</span>
-            </a>
-            <a href="商标.html" class="card">
-                <i class="card-icon fa-regular fa-registered"></i>
-                <div class="card-title">商标</div>
-                <div class="card-desc">商标注册手册、优先审查申请书及尼斯国际商品分类表（1-45类）。</div>
-                <span class="card-btn">进入目录 →</span>
-            </a>
-            <a href="KC.html" class="card">
-                <i class="card-icon fa-solid fa-certificate"></i>
-                <div class="card-title">KC</div>
-                <div class="card-desc">电器安全认证及确认产品目录与申请指南，中韩文对照。</div>
-                <span class="card-btn">进入目录 →</span>
-            </a>
-            <a href="电磁波认证合规手册.html" class="card">
-                <i class="card-icon fa-solid fa-satellite-dish"></i>
-                <div class="card-title">电磁波认证合规手册</div>
-                <div class="card-desc">符合性评估分类、认证注册流程、临时认证规则及设备清单示例。</div>
-                <span class="card-btn">查看资料 →</span>
-            </a>
-            <a href="生活化学.html" class="card">
-                <i class="card-icon fa-solid fa-flask"></i>
-                <div class="card-title">生活化学</div>
-                <div class="card-desc">包含《生活化学SOP》及《安全确认对象生活化学产品的标示事项》。</div>
-                <span class="card-btn">进入目录 →</span>
-            </a>
-            <a href="工业产品.html" class="card">
-                <i class="card-icon fa-solid fa-industry"></i>
-                <div class="card-title">工业产品</div>
-                <div class="card-desc">工业安全保健法安全认证对象及审查所需提交资料，中韩文对照。</div>
-                <span class="card-btn">进入目录 →</span>
-            </a>
-            <a href="化妆品.html" class="card">
-                <i class="card-icon fa-regular fa-droplet"></i>
-                <div class="card-title">化妆品</div>
-                <div class="card-desc">化妆品责任销售合规手册、管理员资格条件及相关法定条款梳理。</div>
-                <span class="card-btn">进入目录 →</span>
-            </a>
-            <a href="成人用品及医疗器械.html" class="card">
-                <i class="card-icon fa-solid fa-notes-medical"></i>
-                <div class="card-title">成人用品及医疗器械</div>
-                <div class="card-desc">合规指引中文版及韩国医疗器械销售商指南、品目分类等韩文法规。</div>
-                <span class="card-btn">进入目录 →</span>
-            </a>
-            <a href="快捷入口.html" class="card">
-                <i class="card-icon fa-solid fa-rocket"></i>
-                <div class="card-title">快捷入口</div>
-                <div class="card-desc">直达韩国知识产权局、生活化学、KC认证、电磁波现状查询。</div>
-                <span class="card-btn">进入目录 →</span>
-            </a>
+            <a href="图片.html" class="card"><span class="card-icon">🖼️</span><div class="card-title">图片</div><div class="card-desc">图片版权注册 SOP 及申请材料、职务著作确认书等模板文件。</div><span class="card-btn">进入目录 →</span></a>
+            <a href="商标.html" class="card"><span class="card-icon">®</span><div class="card-title">商标</div><div class="card-desc">商标注册手册、优先审查申请书及尼斯国际商品分类表（1-45类）。</div><span class="card-btn">进入目录 →</span></a>
+            <a href="KC.html" class="card"><span class="card-icon">⚡</span><div class="card-title">KC</div><div class="card-desc">电器安全认证及确认产品目录与申请指南，中韩文对照。</div><span class="card-btn">进入目录 →</span></a>
+            <a href="电磁波认证合规手册.html" class="card"><span class="card-icon">📡</span><div class="card-title">电磁波认证合规手册</div><div class="card-desc">符合性评估分类、认证注册流程、临时认证规则及设备清单示例。</div><span class="card-btn">查看资料 →</span></a>
+            <a href="生活化学.html" class="card"><span class="card-icon">🧪</span><div class="card-title">生活化学</div><div class="card-desc">包含《生活化学SOP》及《安全确认对象生活化学产品的标示事项》。</div><span class="card-btn">进入目录 →</span></a>
+            <a href="工业产品.html" class="card"><span class="card-icon">⚙️</span><div class="card-title">工业产品</div><div class="card-desc">工业安全保健法安全认证对象及审查所需提交资料，中韩文对照。</div><span class="card-btn">进入目录 →</span></a>
+            <a href="化妆品.html" class="card"><span class="card-icon">🧴</span><div class="card-title">化妆品</div><div class="card-desc">化妆品责任销售合规手册、管理员资格条件及相关法定条款梳理。</div><span class="card-btn">进入目录 →</span></a>
+            <a href="成人用品及医疗器械.html" class="card"><span class="card-icon">🩺</span><div class="card-title">成人用品及医疗器械</div><div class="card-desc">合规指引中文版及韩国医疗器械销售商指南、品目分类等韩文法规。</div><span class="card-btn">进入目录 →</span></a>
+            <a href="快捷入口.html" class="card"><span class="card-icon">🔗</span><div class="card-title">快捷入口</div><div class="card-desc">直达韩国知识产权局、生活化学、KC认证、电磁波现状查询。</div><span class="card-btn">进入目录 →</span></a>
         </div>
     </div>
 
     <div class="footer"><span>产品认证合规资料库</span> · 仅供公司内部使用 · 版本 2.0</div>
 
+    <!-- ⬇️ 密码逻辑 ⬇️ -->
     <script>
-        // ⬇️ 密码
-        const CORRECT_CODE = "692483chl@"; 
+        const CORRECT_CODE = "692483chl@";
 
-        // 检查是否已解锁
         if (sessionStorage.getItem("isUnlocked") === "true") {
-            // 如果已解锁，直接显示主页
             document.getElementById("loginWrapper").style.display = "none";
             document.getElementById("mainWrapper").style.display = "block";
         }
@@ -187,9 +116,7 @@
             var inputCode = document.getElementById("inviteCode").value;
             var errorMsg = document.getElementById("errorMsg");
             if (inputCode === CORRECT_CODE) {
-                // 密码正确，记录解锁状态
                 sessionStorage.setItem("isUnlocked", "true");
-                // 隐藏输入框，显示主页
                 document.getElementById("loginWrapper").style.display = "none";
                 document.getElementById("mainWrapper").style.display = "block";
             } else {
@@ -197,10 +124,356 @@
                 document.getElementById("inviteCode").value = "";
             }
         }
-        // 支持按回车键直接提交
         document.getElementById("inviteCode").addEventListener("keyup", function(event) {
             if (event.key === "Enter") { checkCode(); }
         });
+    </script>
+
+    <!-- ⬇️ 纪念日特效（仅限指定日期触发） ⬇️ -->
+    <div id="fireworks-container"></div>
+    <script>
+        // ---- 获取当前日期 ----
+        const today = new Date();
+        const month = today.getMonth();
+        const date = today.getDate();
+
+        // ---- 容器 ----
+        const container = document.getElementById('fireworks-container');
+
+        // ================================================================
+        //  🎈 5月26日：淡粉 + 淡蓝天空 · 粉蓝气球飘动
+        // ================================================================
+        if (month === 4 && date === 26) {
+            container.style.display = 'block';
+
+            const canvas = document.createElement('canvas');
+            canvas.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;';
+            container.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+
+            let W, H;
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const pinkColors = ['#FFB6C1', '#FF69B4', '#FFC0CB', '#FF99CC'];
+            const blueColors = ['#87CEEB', '#ADD8E6', '#B0E0E6', '#87CEFA', '#98F5FF'];
+
+            class Balloon {
+                constructor() {
+                    this.x = Math.random() * W;
+                    this.y = H + Math.random() * 200;
+                    this.radius = Math.random() * 30 + 20;
+                    this.color = Math.random() > 0.5 ? 
+                        pinkColors[Math.floor(Math.random() * pinkColors.length)] :
+                        blueColors[Math.floor(Math.random() * blueColors.length)];
+                    this.speed = Math.random() * 1.2 + 0.5;
+                    this.swing = Math.random() * 0.02 + 0.01;
+                    this.angle = Math.random() * Math.PI * 2;
+                    this.ropeLen = Math.random() * 20 + 15;
+                }
+                update() {
+                    this.y -= this.speed;
+                    this.x += Math.sin(this.angle) * 0.8;
+                    this.angle += this.swing;
+                    if (this.y < -this.radius * 2) {
+                        this.y = H + Math.random() * 100;
+                        this.x = Math.random() * W;
+                        this.speed = Math.random() * 1.2 + 0.5;
+                    }
+                }
+                draw() {
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.moveTo(this.x, this.y + this.radius * 1.1);
+                    ctx.lineTo(this.x + Math.sin(this.angle * 0.5) * 8, this.y + this.radius * 1.1 + this.ropeLen);
+                    ctx.strokeStyle = '#888';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+                    ctx.shadowBlur = 30;
+                    ctx.shadowColor = this.color;
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = 0.85;
+                    ctx.beginPath();
+                    ctx.ellipse(this.x, this.y, this.radius, this.radius * 1.2, 0, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.moveTo(this.x - 6, this.y + this.radius * 0.9);
+                    ctx.lineTo(this.x + 6, this.y + this.radius * 0.9);
+                    ctx.lineTo(this.x, this.y + this.radius * 1.2);
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.globalAlpha = 0.6;
+                    ctx.fillStyle = '#ffffff';
+                    ctx.beginPath();
+                    ctx.ellipse(this.x - this.radius * 0.3, this.y - this.radius * 0.3, this.radius * 0.2, this.radius * 0.15, -0.3, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            let balloons = [];
+            const count = Math.min(35, Math.floor((W * H) / 20000));
+            for (let i = 0; i < count; i++) balloons.push(new Balloon());
+
+            function drawBackground() {
+                const grad = ctx.createLinearGradient(0, 0, 0, H);
+                grad.addColorStop(0, '#FFE4E1');
+                grad.addColorStop(0.5, '#FFF0F5');
+                grad.addColorStop(0.8, '#E0FFFF');
+                grad.addColorStop(1, '#B0E0E6');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, W, H);
+                ctx.save();
+                ctx.globalAlpha = 0.15;
+                ctx.fillStyle = '#ffffff';
+                for (let i = 0; i < 5; i++) {
+                    let cx = (i * 200 + 100) % W;
+                    let cy = (i * 50 + 20) % (H * 0.3);
+                    ctx.beginPath();
+                    ctx.arc(cx, cy, 40, 0, Math.PI * 2);
+                    ctx.arc(cx + 30, cy - 15, 30, 0, Math.PI * 2);
+                    ctx.arc(cx + 60, cy, 35, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.restore();
+            }
+
+            function loop() {
+                drawBackground();
+                balloons.forEach(b => { b.update(); b.draw(); });
+                requestAnimationFrame(loop);
+            }
+            loop();
+
+            document.addEventListener('click', (e) => {
+                for (let i = 0; i < 3; i++) {
+                    let b = new Balloon();
+                    b.x = e.clientX + (Math.random() - 0.5) * 120;
+                    b.y = e.clientY + (Math.random() - 0.5) * 120;
+                    balloons.push(b);
+                }
+                if (balloons.length > 80) balloons.splice(0, 15);
+            });
+        }
+
+        // ================================================================
+        //  ✨ 6月13日：紫粉星空
+        // ================================================================
+        else if (month === 5 && date === 13) {
+            container.style.display = 'block';
+
+            const canvas = document.createElement('canvas');
+            canvas.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;';
+            container.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+
+            let W, H;
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const starColors = ['#E1BEE7', '#CE93D8', '#BA68C8', '#AB47BC', '#9C27B0', '#F48FB1', '#F06292', '#E91E63', '#D500F9', '#AA00FF'];
+
+            class Star {
+                constructor() {
+                    this.x = Math.random() * W;
+                    this.y = Math.random() * H;
+                    this.radius = Math.random() * 2.5 + 1.5;
+                    this.color = starColors[Math.floor(Math.random() * starColors.length)];
+                    this.vx = (Math.random() - 0.5) * 0.3;
+                    this.vy = (Math.random() - 0.5) * 0.3;
+                    this.alpha = Math.random() * 0.7 + 0.3;
+                    this.alphaSpeed = (Math.random() - 0.5) * 0.008;
+                    this.sizeSpeed = (Math.random() - 0.5) * 0.01;
+                    this.baseRadius = this.radius;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > W) this.vx *= -1;
+                    if (this.y < 0 || this.y > H) this.vy *= -1;
+                    this.alpha += this.alphaSpeed;
+                    if (this.alpha > 1 || this.alpha < 0.15) this.alphaSpeed *= -1;
+                    this.radius += this.sizeSpeed;
+                    if (this.radius > this.baseRadius * 1.8 || this.radius < this.baseRadius * 0.5) this.sizeSpeed *= -1;
+                }
+                draw() {
+                    ctx.save();
+                    ctx.shadowBlur = 20;
+                    ctx.shadowColor = this.color;
+                    ctx.globalAlpha = this.alpha;
+                    ctx.fillStyle = this.color;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.shadowBlur = 0;
+                    ctx.globalAlpha = this.alpha * 0.8;
+                    ctx.fillStyle = '#ffffff';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius * 0.3, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            let stars = [];
+            const starCount = Math.min(150, Math.floor((W * H) / 8000));
+            for (let i = 0; i < starCount; i++) stars.push(new Star());
+
+            function drawBackground() {
+                const grad = ctx.createLinearGradient(0, 0, 0, H);
+                grad.addColorStop(0, '#14002b');
+                grad.addColorStop(0.4, '#2a0845');
+                grad.addColorStop(0.7, '#4a154b');
+                grad.addColorStop(1, '#6a1b4d');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, W, H);
+            }
+
+            function loop() {
+                drawBackground();
+                stars.forEach(s => { s.update(); s.draw(); });
+                requestAnimationFrame(loop);
+            }
+            loop();
+
+            document.addEventListener('click', (e) => {
+                for (let i = 0; i < 5; i++) {
+                    let newStar = new Star();
+                    newStar.x = e.clientX + (Math.random() - 0.5) * 80;
+                    newStar.y = e.clientY + (Math.random() - 0.5) * 80;
+                    newStar.radius = Math.random() * 3 + 2;
+                    newStar.alpha = 0.9;
+                    newStar.vx = (Math.random() - 0.5) * 1;
+                    newStar.vy = (Math.random() - 0.5) * 1;
+                    stars.push(newStar);
+                }
+                if (stars.length > 200) stars.splice(0, 20);
+            });
+        }
+
+        // ================================================================
+        //  🌟 8月18日：黑夜星空 · 黄色星星铺满夜空
+        // ================================================================
+        else if (month === 7 && date === 18) {
+            container.style.display = 'block';
+
+            const canvas = document.createElement('canvas');
+            canvas.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;';
+            container.appendChild(canvas);
+            const ctx = canvas.getContext('2d');
+
+            let W, H;
+            function resize() {
+                W = canvas.width = window.innerWidth;
+                H = canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const starColors = ['#FFD700', '#FFC125', '#FFEB3B', '#FFE082', '#FFF176', '#FFD54F', '#FFD700', '#FFC107'];
+
+            class NightStar {
+                constructor() {
+                    this.x = Math.random() * W;
+                    this.y = Math.random() * H;
+                    this.radius = 1.5 + Math.random() * 3.5;
+                    this.color = starColors[Math.floor(Math.random() * starColors.length)];
+                    this.alpha = 0.4 + Math.random() * 0.6;
+                    this.alphaSpeed = (Math.random() - 0.5) * 0.008;
+                    this.vx = (Math.random() - 0.5) * 0.1;
+                    this.vy = (Math.random() - 0.5) * 0.1;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > W) this.vx *= -1;
+                    if (this.y < 0 || this.y > H) this.vy *= -1;
+                    this.alpha += this.alphaSpeed;
+                    if (this.alpha > 1 || this.alpha < 0.15) this.alphaSpeed *= -1;
+                }
+
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha;
+                    ctx.shadowBlur = 15;
+                    ctx.shadowColor = this.color;
+                    ctx.fillStyle = this.color;
+
+                    const r = this.radius;
+                    ctx.beginPath();
+                    for (let i = 0; i < 8; i++) {
+                        const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
+                        const rad = i % 2 === 0 ? r : r * 0.4;
+                        const px = this.x + Math.cos(angle) * rad;
+                        const py = this.y + Math.sin(angle) * rad;
+                        if (i === 0) ctx.moveTo(px, py);
+                        else ctx.lineTo(px, py);
+                    }
+                    ctx.closePath();
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            let stars = [];
+            const starCount = Math.min(300, Math.floor((W * H) / 2000));
+            for (let i = 0; i < starCount; i++) {
+                stars.push(new NightStar());
+            }
+
+            function drawBackground() {
+                const grad = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, Math.max(W, H) * 0.8);
+                grad.addColorStop(0, '#1a1a2e');
+                grad.addColorStop(0.3, '#16213e');
+                grad.addColorStop(0.6, '#0f0f1a');
+                grad.addColorStop(1, '#000000');
+                ctx.fillStyle = grad;
+                ctx.fillRect(0, 0, W, H);
+
+                ctx.save();
+                ctx.globalAlpha = 0.05;
+                const glow = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, W * 0.6);
+                glow.addColorStop(0, '#FFD700');
+                glow.addColorStop(1, 'transparent');
+                ctx.fillStyle = glow;
+                ctx.beginPath();
+                ctx.arc(W/2, H/2, W * 0.6, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+
+            function loop() {
+                drawBackground();
+                stars.forEach(s => { s.update(); s.draw(); });
+                requestAnimationFrame(loop);
+            }
+            loop();
+
+            document.addEventListener('click', (e) => {
+                for (let i = 0; i < 20; i++) {
+                    let s = new NightStar();
+                    s.x = e.clientX + (Math.random() - 0.5) * 100;
+                    s.y = e.clientY + (Math.random() - 0.5) * 100;
+                    s.radius = 2 + Math.random() * 4;
+                    s.alpha = 1;
+                    s.vx = (Math.random() - 0.5) * 2;
+                    s.vy = (Math.random() - 0.5) * 2 - 1;
+                    stars.push(s);
+                }
+                if (stars.length > 450) stars.splice(0, 80);
+            });
+        }
     </script>
 </body>
 </html>
