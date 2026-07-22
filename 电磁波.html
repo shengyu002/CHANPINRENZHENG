@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>电磁波 - 合规资料库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, 'Microsoft YaHei', 'PingFang SC', sans-serif; background: #f8fafc; color: #334155; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 40px 20px; }
+        .container { width: 100%; max-width: 1000px; background: #ffffff; border-radius: 32px; padding: 50px 40px; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04); margin-bottom: 24px; }
+        .header { text-align: center; margin-bottom: 45px; position: relative; }
+        .header h1 { font-size: 28px; color: #0f172a; font-weight: 600; letter-spacing: 1px; margin-bottom: 8px; }
+        .header p { font-size: 15px; color: #94a3b8; max-width: 500px; margin: 0 auto; line-height: 1.6; }
+        .header .line { width: 50px; height: 4px; background: #0f172a; margin: 16px auto 0; border-radius: 4px; }
+        .back-btn-wrapper { text-align: left; margin-bottom: 16px; }
+        .back-btn { display: inline-block; padding: 10px 24px; background-color: #f1f5f9; color: #0f172a; border: 1px solid transparent; border-radius: 30px; font-weight: 600; font-size: 15px; text-decoration: none; transition: all 0.25s ease; }
+        .back-btn:hover { background-color: #1A4B82; color: #ffffff; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .sub-category { margin-top: 32px; margin-bottom: 16px; }
+        .sub-category:first-of-type { margin-top: 0; }
+        .sub-category h2 { font-size: 20px; color: #0f172a; font-weight: 600; border-left: 5px solid #1A4B82; padding-left: 12px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+        .card { background: #ffffff; border: 1px solid #eef2f6; border-radius: 20px; padding: 32px 24px; text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.3s ease; box-shadow: 0 2px 8px rgba(0,0,0,0.02); }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05); border-color: #cbd5e1; }
+        .card-icon { font-size: 42px; margin-bottom: 16px; display: block; color: #1A4B82; transition: transform 0.3s; }
+        .card:hover .card-icon { transform: scale(1.1); color: #005BAC; }
+        .card-title { font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px; }
+        .card-desc { font-size: 13px; color: #94a3b8; line-height: 1.5; flex-grow: 1; margin-bottom: 16px; }
+        .card-btn { font-size: 14px; font-weight: 500; color: #0f172a; background: #f1f5f9; padding: 6px 24px; border-radius: 20px; transition: all 0.2s; }
+        .card:hover .card-btn { background: #1A4B82; color: #ffffff; }
+        .footer { text-align: center; font-size: 13px; color: #cbd5e1; padding: 10px 0; max-width: 1000px; width: 100%; }
+        .footer span { color: #0f172a; font-weight: 500; }
+        @media (max-width: 600px) { .container { padding: 24px 16px; } .header h1 { font-size: 22px; } .grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="back-btn-wrapper"><a href="index.html" class="back-btn">◀ 返回资料库首页</a></div>
+            <h1>电磁波合规资料</h1>
+            <p>本类目包含广播通信器材符合性评估、认证注册流程，以及免于符合性评价对象器材清单的中文资料与韩文原文对照。</p>
+            <div class="line"></div>
+        </div>
+
+        <!-- 子类目 1：中文 -->
+        <div class="sub-category">
+            <h2>📄 中文</h2>
+        </div>
+        <div class="grid">
+            <a href="电磁波认证合规手册.html" class="card">
+                <i class="card-icon fa-regular fa-file-lines"></i>
+                <div class="card-title">电磁波认证合规手册</div>
+                <div class="card-desc">广播通信器材符合性评估分类、认证注册流程、临时认证规则及设备清单示例。</div>
+                <span class="card-btn">查看资料 →</span>
+            </a>
+            <a href="广播器材免评清单.html" class="card">
+                <i class="card-icon fa-regular fa-file-pdf"></i>
+                <div class="card-title">广播器材免评清单</div>
+                <div class="card-desc">根据《广播通信器材等符合性评价相关告示》附表1第11项，免于符合性评价的器材清单（中文版）。</div>
+                <span class="card-btn">查看资料 →</span>
+            </a>
+        </div>
+
+        <!-- 子类目 2：韩文 -->
+        <div class="sub-category">
+            <h2>🇰🇷 韩文</h2>
+        </div>
+        <div class="grid">
+            <!-- 注意：这里已经改成了指向 .pdf -->
+            <a href="적합성평가 제외 대상 기자재.pdf" class="card">
+                <i class="card-icon fa-regular fa-file-pdf"></i>
+                <div class="card-title">적합성평가 제외 대상 기자재</div>
+                <div class="card-desc">전파법 제58조의2 및 방송통신기자재 등 적합성평가 관련 고시에 따른 적합성평가 제외 대상 기자재 목록 (한글 원문).</div>
+                <span class="card-btn">查看原文 →</span>
+            </a>
+        </div>
+    </div>
+    <div class="footer"><span>产品认证合规资料库</span> · 仅供公司内部使用 · 版本 2.0</div>
+</body>
+</html>
